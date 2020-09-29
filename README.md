@@ -59,53 +59,72 @@
     ```
  5.  视图
      1.  不使用布局页
-         1.  在方法里面右键添加视图
-         2.  视图名称默认与方法同名（如果需要不同名字的布局页，在需要调用时，就需要在此方法返回改成`return View("布局名")`），并且不使用布局页
-         3.  添加之后创建的视图会自动存放在`Views/Controller名文件夹`中
-         4.  视图默认代码就是一个完整的HTML文档，但是后缀名是.cshtml
-         5.  视图默认代码  
-         ```cshtml
-            @{
-                Layout = null;
-            }
+         1. 在方法里面右键添加视图
+         
+         2. 视图名称默认与方法同名（如果需要不同名字的布局页，在需要调用时，就需要在此方法返回改成`return View("布局名")`），并且不使用布局页
+         
+         3. 添加之后创建的视图会自动存放在`Views/Controller名文件夹`中
+         
+         4. 视图默认代码就是一个完整的HTML文档，但是后缀名是.cshtml
+         
+         5. 视图默认代码  
 
-            <!DOCTYPE html>
-
-            <html>
-            <head>
-                <meta name="viewport" content="width=device-width" />
-                <title>Index</title>
-            </head>
-            <body>
-                <div> 
-                </div>
-            </body>
-            </html>
-         ```
+            ```cshtml
+      @{
+                   Layout = null;
+               }
+            
+               <!DOCTYPE html>
+            
+               <html>
+               <head>
+                   <meta name="viewport" content="width=device-width" />
+                   <title>Index</title>
+               </head>
+               <body>
+                   <div> 
+                   </div>
+               </body>
+               </html>
+            ```
+         
+            
          6.  运行起来就是这个代码显示情况
      2.  使用布局页（大部分和不使用布局页类似）
-         1.  在方法里面右键添加视图
-         2.  在这里使用布局页，可以选择自定义的布局页，如果不选择就是系统默认的布局页
-         3.  使用布局页的默认代码，这时候如果想要添加页面代码，就只需要添加body标签内代码即可  
-         ```cshtml
+    1. 在方法里面右键添加视图
+         
+         2. 在这里使用布局页，可以选择自定义的布局页，如果不选择就是系统默认的布局页
+        
+        3. 使用布局页的默认代码，这时候如果想要添加页面代码，就只需要添加body标签内代码即可  
+        
+           ```cshtml
         @{
-            ViewBag.Title = "Index2";
-        }
-
-        <h2>Index2</h2>
-         ```
+               ViewBag.Title = "Index2";
+           }
+           
+           <h2>Index2</h2>
+           ```
+        
+           
          4. 使用布局页之后，就会将视图代码嵌入到布局页（_Layout.cshtml，默认的布局页位于Views/Shared文件夹）中的`@RenderBody()`上，这个功能就是子视图占位
+        
          5. 添加一个菜单项  
-         ```cshtml
-         <li>@Html.ActionLink("标签内容", "方法名", "Controller名")</li>
-         ```
+        
+            ```cshtml
+             <li>@Html.ActionLink("标签内容", "方法名", "Controller名")</li>
+            ```
+        
+            
 6. _ViewStart.cshtml
    1. 会在所有视图被执行之前先执行，通常用于指定视图默认的布局页  
-   ```cshtml
-    @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-    }
-   ```
+   
+      ```cshtml
+      @{
+       Layout = "~/Views/Shared/_Layout.cshtml";
+       }
+      ```
+   
+      
    2. 局部与全局
       1. 全局：所有视图都起作用，位于Views文件夹下
       2. 局部：与视图文件一起位于某个子文件夹下，该文件夹下的视图将受局部_ViewStart.cshtml作用。
