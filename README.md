@@ -1,9 +1,12 @@
+- [Web-Notes](#web-notes)
+  - [第一周](#第一周)
+    - [MVC基础编程](#mvc基础编程)
 # Web-Notes
 ## 第一周
 ### MVC基础编程
 
 1. 新建一个MVC项目
-   1. 选择ASP.NET Web应用程序(.NET Framework)
+   1. 选择ASP . NET Web应用程序(.NET Framework)
    2. 设置项目名称和存储位置
    3. 选择MVC模式，可以添加身份验证（一般选择个人用户账户）
    4. 初次运行，需要信任IIS Express SSL，然后不安装证书
@@ -68,44 +71,36 @@
          4. 视图默认代码就是一个完整的HTML文档，但是后缀名是.cshtml
          
          5. 视图默认代码  
-
-            ```cshtml
-      @{
-                   Layout = null;
-               }
-            
-               <!DOCTYPE html>
-            
-               <html>
-               <head>
-                   <meta name="viewport" content="width=device-width" />
-                   <title>Index</title>
-               </head>
-               <body>
-                   <div> 
-                   </div>
-               </body>
-               </html>
-            ```
-         
-            
+         ```cshtml
+            @{
+                Layout = null;
+            }
+        
+            <!DOCTYPE html>
+        
+            <html>
+            <head>
+                <meta name="viewport" content="width=device-width" />
+                <title>Index</title>
+            </head>
+            <body>
+                <div> 
+                </div>
+            </body>
+            </html>
+         ```
          6.  运行起来就是这个代码显示情况
      2.  使用布局页（大部分和不使用布局页类似）
-    1. 在方法里面右键添加视图
-         
-         2. 在这里使用布局页，可以选择自定义的布局页，如果不选择就是系统默认的布局页
-        
-        3. 使用布局页的默认代码，这时候如果想要添加页面代码，就只需要添加body标签内代码即可  
-        
-           ```cshtml
-        @{
+         1.  在方法里面右键添加视图
+         2.  在这里使用布局页，可以选择自定义的布局页，如果不选择就是系统默认的布局页
+         3.  使用布局页的默认代码，这时候如果想要添加页面代码，就只需要添加body标签内代码即可  
+            ```cshtml
+            @{
                ViewBag.Title = "Index2";
-           }
+            }
            
-           <h2>Index2</h2>
-           ```
-        
-           
+            <h2>Index2</h2>
+            ```
          4. 使用布局页之后，就会将视图代码嵌入到布局页（_Layout.cshtml，默认的布局页位于Views/Shared文件夹）中的`@RenderBody()`上，这个功能就是子视图占位
         
          5. 添加一个菜单项  
@@ -114,7 +109,7 @@
              <li>@Html.ActionLink("标签内容", "方法名", "Controller名")</li>
             ```
         
-            
+    
 6. _ViewStart.cshtml
    1. 会在所有视图被执行之前先执行，通常用于指定视图默认的布局页  
    
@@ -124,7 +119,6 @@
        }
       ```
    
-      
    2. 局部与全局
       1. 全局：所有视图都起作用，位于Views文件夹下
       2. 局部：与视图文件一起位于某个子文件夹下，该文件夹下的视图将受局部_ViewStart.cshtml作用。
