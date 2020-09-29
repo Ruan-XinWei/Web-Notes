@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace FirstAspNet.Controllers
 {
@@ -11,7 +7,12 @@ namespace FirstAspNet.Controllers
         // GET: Default
         public ActionResult Index()
         {
-            return View();
+            return View("Index2");
+        }
+
+        public string Index1()
+        {
+            return "测试文本";
         }
     }
 }
