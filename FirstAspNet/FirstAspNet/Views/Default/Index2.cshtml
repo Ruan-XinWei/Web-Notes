@@ -1,24 +1,18 @@
 ﻿
-@{
-    ViewBag.Title = "Index2";
-}
+@{ ViewBag.Title = "Index2"; }
 
-<center>
-    <div id="top">
-        <h1>千古绝句</h1>
-        <hr>
-        <h2>《赤壁怀古》</h2>
-        <a href="https://www.baidu.com/s?ie=UTF-8&wd=苏轼" target="_blank">苏轼</a>
-        <br>
-        <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1948403437,436194016&fm=26&gp=0.jpg"
-             alt="苏轼">
-        <p>大江东去，浪淘尽</p>
-        <p> 千古东流人物</p>
-        <p> 故垒西边，人道是</p>
-        <p> 三国周郎赤壁</p>
-        <p> ......</p>
-        <hr>
-        <p>友情链接：<a href="#">李清照</a> | <a href="#">欧阳修</a> | <a href="#">辛弃疾</a> </p>
-        <a href="#top">返回顶部</a>
-    </div>
-</center>
+<form action="/Default/Login" method="post">
+    <label>
+        用户名：
+        <input type="text" name="username"> <br />
+    </label>
+
+    <label>
+        密 码：
+        <input type="password" name="psd" maxlength=6>
+    </label>
+
+    <br />
+    <input type="submit" value="提交">
+    <input type="reset" value="重填">
+</form>
