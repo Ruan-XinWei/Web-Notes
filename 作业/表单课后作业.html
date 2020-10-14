@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .clearfix {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        select {
+            width: 100px;
+            padding-left: 3%;
+            text-align: center;
+        }
+
+        input {
+            outline-style: none;
+        }
+
+        #verifycode_exchange {
+            cursor: pointer;
+            user-select: none;
+            background-color: #fff;
+            padding-right: 5px;
+            margin-left: 20px;
+            background-clip: border-box;
+            font-style: italic;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        .title {
+            color: blue;
+            font-weight: bold;
+            padding: 10px;
+            padding-left: 15px;
+        }
+
+        tr::after {
+            content: '\00A0';
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        tr td:first-child {
+            text-align: right;
+            font-weight: bold;
+        }
+
+        td span.info:not(#verifycode_exchange) {
+            display: inline-block;
+            text-indent: 20px;
+        }
+
+        td span.highlight {
+            color: red;
+        }
+
+        img {
+            margin-top: 20px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #select_photo {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="title"><span>欢迎注册会员</span></div>
+        <form action="" method="POST">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><label for="phone">手机号码：</label></td>
+                        <td>
+                            <input type="text" name="phone" id="phone" placeholder="11位手机号">
+                            <span class="info highlight">必填</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">创建密码：</label></td>
+                        <td>
+                            <input type="password" name="password" id="password" placeholder="8位密码">
+                            <span class="info highlight">必填</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="mailbox">注册邮箱：</label></td>
+                        <td>
+                            <input type="text" name="mailbox" id="mailbox" placeholder="例如:wustzz@sina.com">
+                            <span class="info highlight">必填</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="verifycode">验证码：</label></td>
+                        <td>
+                            <input type="text" name="verifycode" id="verifycode">
+                            <span class="info" id="verifycode_exchange" onclick="exchangeCode();">XDIS</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="sex">性别：</label></td>
+                        <td>
+                            <input type="radio" name="sex" id="sex" value="male" checked="checked">
+                            <span>男</span>
+                            <input type="radio" name="sex" id="sex" value="female">
+                            <span>女</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="birthday">生日：</label></td>
+                        <td>
+                            <input type="date" name="birthday" id="birthday" placeholder="年/月/日">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="age">年龄：</label></td>
+                        <td><input type="text" name="age" id="age"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="nativeplace">籍贯：</label></td>
+                        <td><select name="nativeplace" id="nativeplace" onchange="selectCity();">
+                                <option value="江西省" selected="selected">江西省</option>
+                                <option value="河北省">河北省</option>
+                                <option value="山西省">山西省</option>
+                                <option value="湖北省">湖北省</option>
+                            </select>
+                            <select name="nativeplace" id="city">
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="education">个人学历：</label></td>
+                        <td>
+                            <select name="education" id="education">
+                                <option value="本科" selected="selected">本科</option>
+                                <option value="专科">专科</option>
+                                <option value="硕士生">硕士生</option>
+                                <option value="博士生">博士生</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="money">月薪：</label></td>
+                        <td>
+                            <input type="range" name="money" id="money" value="5000" min="0" max="10000" step="1">
+                            <span class="info money-info" id="nowmoney"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="hobby">个人爱好：</label></td>
+                        <td>
+                            <input type="checkbox" name="hobby" id="hobby" value="sing">
+                            <span>唱歌</span>
+                            <input type="checkbox" name="hobby" id="hobby" value="run">
+                            <span>跑步</span>
+                            <input type="checkbox" name="hobby" id="hobby" value="swim">
+                            <span>游泳</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="select_photo" class="clearfix">个人照片：</label></td>
+                        <td>
+                            <div class="img">
+                                <img id="photo"
+                                    src="data:image/jpg;base64,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"
+                                    alt="正在加载中...">
+                            </div>
+                            <input type="file" name="photo" id="select_photo" onchange="headleFiles(this.files);">
+                            <button id="select_image">选择个人图片</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="resume">个人简历：</label></td>
+                        <td>
+                            <textarea name="resume" id="resmue" cols="30" rows="10"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="提交">
+                            <input type="reset" value="重填" onclick="location.reload();">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</body>
+
+<script>
+    function addMoney() {
+        var node_money = document.getElementById("money");
+        var money = node_money.getAttribute("value") + "元";
+        var nowmoney = document.getElementById("nowmoney");
+        var nowmoney_text = document.createTextNode(money);
+        nowmoney.appendChild(nowmoney_text);
+        document.getElementById("money").onchange = function () {
+            document.getElementById("nowmoney").textContent = this.value + "元";
+        }
+    }
+    addMoney();
+
+    var node_select_image = document.getElementById("select_image");
+    var node_select_photo = document.getElementById("select_photo");
+    var node_photo = document.getElementById("photo");
+    node_select_image.addEventListener("click", function (e) {
+        if (node_select_photo) {
+            node_select_photo.click();
+        }
+        e.preventDefault();
+    }, false);
+
+    function headleFiles(files) {
+        node_photo.setAttribute("src", window.URL.createObjectURL(files[0]));
+        node_photo.onload() = function () {
+            window.URL.revokeObjectURL(this.src);
+        }
+    }
+
+    function exchangeCode() {
+        var node_code = document.getElementById("verifycode_exchange");
+        var array_code = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O',
+            'P', 'A', 'S', 'D',
+            'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M'
+        ];
+        var code = '';
+        var percentage = Math.round(Math.random() * (100)) / 2 + 50 + "%";
+        var bgc = 'background-color: rgb(' + percentage + "," + percentage + "," + percentage + ")";
+        for (let i = 0; i < 4; ++i) {
+            let random = array_code[Math.round(Math.random() * (array_code.length - 1))]
+            code += random;
+        }
+        bgc += ";";
+        node_code.textContent = code;
+        node_code.setAttribute("style", bgc);
+    }
+
+    function selectCity() {
+        var place = document.getElementById("nativeplace");
+        var node_option = document.createElement("option");
+        var node_city = document.getElementById("city");
+        node_city.innerHTML="";
+        var city = new Array();
+        city['江西省'] = ['南昌市', '九江市', '景德镇市', '鹰潭市', '新余市', '萍乡市', '赣州市', '上饶市', '抚州市', '宜春市', '吉安市'];
+        city['河北省'] = ['石家庄市','唐山市','秦皇岛市','邯郸市','邢台市','保定市','张家口市','承德市','沧州市','廊坊市','衡水市'];
+        city['山西省'] = ['太原市','大同市','阳泉市','长治市','晋城市','朔州市','晋中市','运城市','忻州市','临汾市','吕梁市'];
+        city['湖北省'] = ['武汉市','十堰市','襄阳市','荆门市','孝感市','黄冈市','鄂州市','黄石市','咸宁市','荆州市','宜昌市','随州市'];
+        for (let i = 0; i < city[place.value].length; ++i) {
+            var node_option = document.createElement("option");
+            var node_option_text = document.createTextNode(city[place.value][i]);
+            node_option.appendChild(node_option_text);
+            node_option.setAttribute("value", city[place.value][i]);
+            node_city.appendChild(node_option);
+        }
+        location.onload();
+    }
+    selectCity();
+</script>
+
+</html>
