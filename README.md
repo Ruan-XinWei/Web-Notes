@@ -2,6 +2,7 @@
   - [MVC基础编程](#mvc基础编程)
   - [前后端数据交换](#前后端数据交换)
     - [前端数据提交](#前端数据提交)
+    - [后台数据发送](#后台数据发送)
 # Web-Notes
 ## MVC基础编程
 
@@ -127,3 +128,42 @@
 
 ### 前端数据提交
 
+1. 前端使用Form表单将数据提交到后端，在MVC中，Form的action需要按照`控制器名称/对应的方法`这样的格式，提交到对应的方法中  
+    ```html
+    <form action="/Default/ShowInfo" method="POST" id="form" enctype="multipart/form-data">
+    </form>
+    ```
+    ```cs
+    public class DefaultController : Controller {
+        public ActionResult ShowInfo() {
+            //...
+        }
+    }
+    ```
+2. 提交给对应的方法后，方法直接在形参列表中写出前端输入框的name来进行获取输入框的值  
+    ```html
+    <form action="/Default/ShowInfo" method="POST" id="form" enctype="multipart/form-data">
+        <input type="text" name="phone" id="phone" placeholder="11位手机号">
+    </form>
+    ```
+    ```cs
+    public class DefaultController : Controller {
+        public ActionResult ShowInfo(string phone) {
+            //...
+        }
+    }
+    ```
+
+### 后台数据发送
+1. 在后台先将数据存储到ViewBag中  
+    ```cs
+    public class DefaultController : Controller {
+        public ActionResult ShowInfo(string phone) {
+            ViewBag.phone = phone;
+        }
+    }
+    ```
+2. 前端通过ViewBag进行获取  
+    ```cshtml
+    <p>手机号码：@ViewBag.phone;</p>
+    ```
