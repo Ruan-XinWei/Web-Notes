@@ -15,7 +15,7 @@
 <body>
     <div class="main">
         <div class="title"><span>欢迎注册会员</span></div>
-        <form action="" method="GET" id="form">
+        <form action="/Default/ShowInfo" method="POST" id="form" enctype="multipart/form-data">
             <table>
                 <tbody>
                     <tr>
@@ -49,9 +49,9 @@
                     <tr>
                         <td><label for="sex">性别：</label></td>
                         <td>
-                            <input type="radio" name="sex" id="sex" value="male" checked="checked">
+                            <input type="radio" name="sex" id="sex" value="男" checked="checked">
                             <span>男</span>
-                            <input type="radio" name="sex" id="sex" value="female">
+                            <input type="radio" name="sex" id="sex" value="女">
                             <span>女</span>
                         </td>
                     </tr>

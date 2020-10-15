@@ -69,13 +69,16 @@ document.getElementById("form").onsubmit = function () {
     var hobbys = document.getElementsByName("hobbys")[0];
     var hobby = document.getElementsByName("hobby");
     var str = "";
-    for (let i = 0; i < hobby.length && hobby[i].checked; ++i) {
+    for (let i = 0; i < hobby.length; ++i) {
+        if (!hobby[i].checked) {
+            continue;
+        }
         i == (hobby.length - 1) ? (str += hobby[i].value) : (str += hobby[i].value + " ");
     }
     hobbys.onload = function () {
         hobbys.values = str;
     }
-    hobbys.values = str;
+    hobbys.value = str;
     console.log(str);
     /*return false;*/
 }

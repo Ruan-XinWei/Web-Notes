@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System.IO;
+using System.Web;
+using System.Web.Mvc;
 
 namespace FirstAspNet.Controllers
 {
@@ -38,12 +40,30 @@ namespace FirstAspNet.Controllers
             ViewBag.money = money;
             ViewBag.hobbys = hobbys;
             ViewBag.resume = resume;
+            ViewBag.result = Upload();
             return View();
         }
 
         public string Index1()
         {
             return "测试文本";
+        }
+
+        public ActionResult Upload()
+        {
+            HttpPostedFileBase file = Request.Files["myfile"];
+            if (file == null) return Content("上传失败");
+            var fileName = Path.Combine(Request.MapPath("~/Upload"),
+            Path.GetFileName(file.FileName));
+            try
+            {
+                file.SaveAs(fileName);
+                return Content("上传成功");
+            }
+            catch
+            {
+                return Content("上传失败");
+            }
         }
     }
 }
