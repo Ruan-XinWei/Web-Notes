@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Web;
 using System.Web.Mvc;
 
@@ -40,7 +41,9 @@ namespace FirstAspNet.Controllers
             ViewBag.money = money;
             ViewBag.hobbys = hobbys;
             ViewBag.resume = resume;
-            ViewBag.result = Upload();
+            string filename = "";
+            Upload(ref filename);
+            ViewBag.photo = filename;
             return View();
         }
 
@@ -49,21 +52,27 @@ namespace FirstAspNet.Controllers
             return "测试文本";
         }
 
-        public ActionResult Upload()
+        public ActionResult Upload(ref string filename)
         {
-            HttpPostedFileBase file = Request.Files["myfile"];
+            HttpPostedFileBase file = Request.Files["photo"];
             if (file == null) return Content("上传失败");
+            filename = file.FileName;
+            filename = filename.Substring(0, filename.IndexOf(".")) +
+            GetTimeStamp() + "." +
+            filename.Substring(filename.IndexOf(".") + 1);
             var fileName = Path.Combine(Request.MapPath("~/Upload"),
-            Path.GetFileName(file.FileName));
+            Path.GetFileName(filename));
             try
-            {
-                file.SaveAs(fileName);
-                return Content("上传成功");
-            }
+            { file.SaveAs(fileName); return Content("上传成功"); }
             catch
-            {
-                return Content("上传失败");
-            }
+            { return Content("上传失败"); }
         }
+
+        public static string GetTimeStamp()
+        {
+            TimeSpan ts = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            return Convert.ToInt64(ts.TotalSeconds).ToString();
+        }
+
     }
 }
