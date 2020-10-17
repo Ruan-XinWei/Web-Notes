@@ -1,3 +1,5 @@
+var true_code = 'XDIS';
+
 function addMoney() {
     var node_money = document.getElementById("money");
     var money = node_money.getAttribute("value") + "元";
@@ -8,19 +10,21 @@ function addMoney() {
         document.getElementById("nowmoney").textContent = this.value + "元";
     }
 }
-addMoney();
 
-var node_select_image = document.getElementById("select_image");
-var node_select_photo = document.getElementById("select_photo");
-var node_photo = document.getElementById("photo");
-node_select_image.addEventListener("click", function (e) {
-    if (node_select_photo) {
-        node_select_photo.click();
-    }
-    e.preventDefault();
-}, false);
+function loadImage() {
+    var node_select_image = document.getElementById("select_image");
+    var node_select_photo = document.getElementById("select_photo");
+    var node_photo = document.getElementById("photo");
+    node_select_image.addEventListener("click", function (e) {
+        if (node_select_photo) {
+            node_select_photo.click();
+        }
+        e.preventDefault();
+    }, false);
+}
 
 function headleFiles(files) {
+    node_photo.style.backgroundImage = "";
     node_photo.setAttribute("src", window.URL.createObjectURL(files[0]));
     node_photo.onload() = function () {
         window.URL.revokeObjectURL(this.src);
@@ -42,6 +46,7 @@ function exchangeCode() {
     }
     bgc += ";";
     node_code.textContent = code;
+    true_code = code;
     node_code.setAttribute("style", bgc);
 }
 
@@ -63,20 +68,31 @@ function selectCity() {
         node_city.appendChild(node_option);
     }
 }
-selectCity();
 
-document.getElementById("form").onsubmit = function() {
-    var hobbys = document.getElementsByName("hobbys")[0];
-    var hobby = document.getElementsByName("hobby");
-    var str = "";
-    for(let i =0; i <hobby.length ; ++i) {
-        if (!hobby[i].checked) {
-            continue;
+function mySubmit() {
+    document.getElementById("form").onsubmit = function () {
+        var hobbys = document.getElementsByName("hobbys")[0];
+        var hobby = document.getElementsByName("hobby");
+        var input_code = document.getElementById("verifycode");
+        var str = "";
+        for (let i = 0; i < hobby.length; ++i) {
+            if (!hobby[i].checked) {
+                continue;
+            }
+            i == (hobby.length - 1) ? (str += hobby[i].value) : (str += hobby[i].value + " ");
         }
-        i == (hobby.length - 1) ? (str += hobby[i].value) : (str += hobby[i].value + " ");
+        hobbys.value = str;
+        // hobbys.setAttribute("value")
+        // console.log(str);
+        if (input_code.value != true_code) {
+            alert("验证码输入错误！");
+        }
+        console.log(input_code.value);
+        // return false;
     }
-    hobbys.value = str;
-    // hobbys.setAttribute("value")
-    console.log(str);
-    return false;
 }
+
+addLoadEvent(addMoney);
+addLoadEvent(loadImage);
+addLoadEvent(selectCity);
+addLoadEvent(mySubmit);
