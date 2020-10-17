@@ -14,7 +14,6 @@ function addMoney() {
 function loadImage() {
     var node_select_image = document.getElementById("select_image");
     var node_select_photo = document.getElementById("select_photo");
-    var node_photo = document.getElementById("photo");
     node_select_image.addEventListener("click", function (e) {
         if (node_select_photo) {
             node_select_photo.click();
@@ -24,6 +23,7 @@ function loadImage() {
 }
 
 function headleFiles(files) {
+    var node_photo = document.getElementById("photo");
     node_photo.style.backgroundImage = "";
     node_photo.setAttribute("src", window.URL.createObjectURL(files[0]));
     node_photo.onload() = function () {
