@@ -26,7 +26,10 @@ namespace FirstAspNet.Controllers
             return View();
         }
 
-        public ActionResult ShowInfo(string phone, string password, string mailbox, string verifycode, string sex, string birthday, string age, string nativeplace, string city, string education, string money, string hobbys, string resume)
+        public ActionResult ShowInfo(
+            string phone, string password, string mailbox, string verifycode,
+            string sex, string birthday, string age, string nativeplace,
+            string city, string education, string money, string hobbys, string resume)
         {
             ViewBag.phone = phone;
             ViewBag.password = password;
@@ -45,11 +48,6 @@ namespace FirstAspNet.Controllers
             Upload(ref filename);
             ViewBag.photo = filename;
             return View();
-        }
-
-        public string Index1()
-        {
-            return "测试文本";
         }
 
         public ActionResult Upload(ref string filename)
@@ -74,5 +72,10 @@ namespace FirstAspNet.Controllers
             return Convert.ToInt64(ts.TotalSeconds).ToString();
         }
 
+
+        public string Index1()
+        {
+            return "测试文本";
+        }
     }
 }

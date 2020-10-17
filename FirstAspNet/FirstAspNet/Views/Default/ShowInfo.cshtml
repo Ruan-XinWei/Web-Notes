@@ -1,6 +1,6 @@
 ﻿@{ ViewBag.Title = "ShowInfo"; }
 
-<h2>ShowInfo</h2>
+<h2>显示信息</h2>
 
 <p>手机号码：@ViewBag.phone;</p>
 <p>密码：@ViewBag.password;</p>
@@ -11,7 +11,7 @@
 <p>年龄：@ViewBag.age;</p>
 <p>籍贯：@ViewBag.nativeplace; @ViewBag.city;</p>
 <p>学历：@ViewBag.education;</p>
-<p>月薪：@ViewBag.money;元</p>
-<p>爱好：@ViewBag.hobbys</p>
+<p>月薪：@ViewBag.money<span>元;</span></p>
+<p>爱好：@ViewBag.hobbys<span>;</span></p>
+<p>照片：<img src="~/Upload/@ViewBag.photo" style="width: 100px; height: 100px; border-radius: 50%;" /></p>
 <p>简历：@ViewBag.resume;</p>
-<p>图片：<img src="~/Upload/@ViewBag.photo" style="width: 100px; height: 100px; border-radius: 50%; display: inline-block;" /></p>
