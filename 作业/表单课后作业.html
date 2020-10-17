@@ -8,7 +8,7 @@
 
     </style>
     <link rel="stylesheet" href="/Content/enroll.css">
-    
+
 
 </head>
 
@@ -35,7 +35,7 @@
                     <tr>
                         <td><label for="mailbox">注册邮箱：</label></td>
                         <td>
-                            <input type="text" name="mailbox" id="mailbox" placeholder="例如:wustzz@sina.com">
+                            <input type="email" name="mailbox" id="mailbox" placeholder="例如:wustzz@sina.com">
                             <span class="info highlight">必填</span>
                         </td>
                     </tr>
@@ -67,14 +67,16 @@
                     </tr>
                     <tr>
                         <td><label for="nativeplace">籍贯：</label></td>
-                        <td><select name="nativeplace" id="nativeplace" onchange="selectCity();">
+                        <td>
+                            <select name="nativeplace" id="nativeplace" onchange="selectCity();">
                                 <option value="江西省" selected="selected">江西省</option>
                                 <option value="河北省">河北省</option>
                                 <option value="山西省">山西省</option>
                                 <option value="湖北省">湖北省</option>
                             </select>
-                            <select name="nativeplace" id="city">
-                            </select></td>
+                            <select name="city" id="city">
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <td><label for="education">个人学历：</label></td>
@@ -97,7 +99,7 @@
                     <tr>
                         <td><label for="hobby">个人爱好：</label></td>
                         <td>
-                            <input name="hobbys" />
+                            <input hidden="hidden" name="hobbys" />
                             <input type="checkbox" name="hobby" id="hobby" value="唱歌">
                             <span>唱歌</span>
                             <input type="checkbox" name="hobby" id="hobby" value="跑步">
@@ -135,68 +137,7 @@
             </table>
         </form>
     </div>
-    <div>
-        <!-- string phone
-        string password
-        string mailbox 
-        string verifycode
-        string sex
-        string birthday
-        string age
-        string nativeplace
-        string education
-        string money
-        string resume
-        <p>@ViewBag.phone;</p>
-        <p>@ViewBag.password;</p>
-        <p>@ViewBag.mailbox ;</p>
-        <p>@ViewBag.verifycode;</p>
-        <p>@ViewBag.sex;</p>
-        <p>@ViewBag.birthday;</p>
-        <p>@ViewBag.age;</p>
-        <p>@ViewBag.nativeplace;</p>
-        <p>@ViewBag.city;</p>
-        <p>@ViewBag.education;</p>
-        <p>@ViewBag.money;</p>
-        <p>@ViewBag.resume;</p>
-        @ViewBag.phone;
-        @ViewBag.password;
-        @ViewBag.mailbox ;
-        @ViewBag.verifycode;
-        @ViewBag.sex;
-        @ViewBag.birthday;
-        @ViewBag.age;
-        @ViewBag.nativeplace;
-        @ViewBag.city;
-        @ViewBag.education;
-        @ViewBag.money;
-        @ViewBag.resume; -->
-    </div>
 </body>
-
-<script>
-    
-
-    // document.getElementById('form').onsubmit = function () {
-    //     console.log('---');
-    //     var hobbys = document.getElementsByName('hobbys')[0];
-    //     var hobby = document.getElementsByName('hobby');
-    //     console.log(hobby);
-    //     var str = "";
-    //     for(var i =0; i <hobby.length; i++) {
-    //         console.log('-')
-    //         if(hobby[i].checked == true) {
-    //             console.log('--')
-    //             str += hobby[i].value;
-    //             str += ' ';
-    //         }
-    //     }
-    //     hobbys.value = str;
-    //     console.log('--------');
-    //     return false;
-    // }
-    
-</script>
 
 <script src="/Scripts/enroll.js"></script>
 

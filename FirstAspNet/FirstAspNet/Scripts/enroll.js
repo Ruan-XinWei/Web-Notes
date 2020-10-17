@@ -68,6 +68,7 @@ selectCity();
 document.getElementById("form").onsubmit = function () {
     var hobbys = document.getElementsByName("hobbys")[0];
     var hobby = document.getElementsByName("hobby");
+    var input_code = document.getElementById("verifycode");
     var str = "";
     for (let i = 0; i < hobby.length; ++i) {
         if (!hobby[i].checked) {
@@ -75,10 +76,12 @@ document.getElementById("form").onsubmit = function () {
         }
         i == (hobby.length - 1) ? (str += hobby[i].value) : (str += hobby[i].value + " ");
     }
-    hobbys.onload = function () {
-        hobbys.values = str;
-    }
     hobbys.value = str;
-    console.log(str);
-    /*return false;*/
+    // hobbys.setAttribute("value")
+    // console.log(str);
+    if (input_code.value != true_code) {
+        alert("验证码输入错误！");
+    }
+    console.log(input_code.value);
+    // return false;
 }
