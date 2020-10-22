@@ -7,7 +7,86 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>个人简历</title>
 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
+        div {
+            border: 1px solid silver;
+            width: 800px;
+            margin: 3px;
+            background-color: skyblue;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        div.header {
+            text-align: center;
+        }
+
+        div.header h2 {
+            letter-spacing: 30px;
+            text-indent: 30px;
+        }
+
+        div.header img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+
+        div.header p:last-child {
+            color: red;
+            margin-top: 10px;
+            font-weight: bolder;
+        }
+
+        div.content {
+            color: red;
+            background: 0 0 / 100px 100px rgba(187, 255, 170, 0.308);
+        }
+
+        div.content table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        div.content table td.first_column {
+            width: 30px;
+            text-align: center;
+        }
+
+        div.content table td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        div.content table td.td {
+            border: 1px solid red;
+        }
+
+        div.content table ul {
+            margin-left: 50px;
+        }
+
+        div.content table ul ol {
+            margin-left: 30px;
+        }
+
+        div.content table li {
+            margin: 5px;
+        }
+
+        div.content table iframe {
+            margin: 0px;
+        }
+
+        div.content table td.video {
+            padding: 0px;
+        }
+    </style>
 
 
 </head>
@@ -17,20 +96,21 @@
 
     <div class="header">
         <h2>个人简历</h2>
-        <img src="images/cat.jpg" alt="大头照">
+        <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2390085644,1267507116&fm=26&gp=0.jpg"
+            alt="大头照">
         <p><strong>小猫同学</strong></p>
         <p>求职意向：软件开发</p>
     </div>
 
     <div class="content">
-        <table border=1>
+        <table>
             <!--第一栏-->
             <tr>
                 <td rowspan="5" class="first_column">基本信息</td>
                 <td>姓名</td>
                 <td>小橘子</td>
                 <td>出生年月</td>
-                <td>1999.9</td>
+                <td class="td">1999.9</td>
             </tr>
 
             <tr>
@@ -88,9 +168,14 @@
             <!--第三栏-->
             <tr>
                 <td class="first_column">个人风采</td>
-                <td colspan="4">
-                    <video src="video/纽约航拍.mp4" width="300" height="200" controls="controls"></video><video
-                        src="video/纽约航拍.mp4" width="300" height="200" controls="controls"></video>
+                <td colspan="4" class="video">
+                    <iframe
+                        src="https://player.bilibili.com/player.html?aid=23300530&bvid=BV1HW411F7RA&cid=38808598&page=1"
+                        scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="300"
+                        height="150">
+                    </iframe>
+                    <!-- <video
+                        src="video/纽约航拍.mp4" width="300" height="150" controls="controls"></video> -->
 
                 </td>
             </tr>
