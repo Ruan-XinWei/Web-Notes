@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.clearfix::after,
+.clearfix::before {
+    display: table;
+    content: "";
+    clear: both;
+}
+
+body {
+    background: url("../images/page-bg.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.nav {
+    position: absolute;
+    z-index: 2;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    background-color: #333333;
+}
+
+.nav>ul>li {
+    float: left;
+}
+
+.nav ul li a:link,
+.nav ul li a:visited {
+    display: block;
+    width: 150px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #333333;
+}
+
+.nav ul li a:hover,
+.nav ul li a:active {
+    color: #cfb4b4;
+    background-color: #000;
+}
+
+.dropdown .dropdown-content {
+    display: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.content {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.content .content-left {
+    float: left;
+    width: 20%;
+    /* height: 575px; */
+    padding: 30px 0;
+    color: #fff;
+    background-color: #A43E49;
+    position: sticky;
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+}
+
+.content-left .container {
+    text-align: center;
+}
+
+.container .author-content img {
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+}
+
+.container .author-content h4,
+.post h4 {
+    font-weight: bold;
+    padding: 15px 0px;
+}
+
+.container .author-content p {
+    margin-bottom: 30px;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.container .left-nav li a:link,
+.container .left-nav li a:visited {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    border-top: 1px solid #fff;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.container .left-nav li:last-child a {
+    border-bottom: 1px solid #fff;
+}
+
+.content .content-right {
+    float: left;
+    width: 80%;
+    color: #fff;
+}
+
+.content-right .section-heading::after,
+.content-right .post::after {
+    display: block;
+    padding-top: 100px;
+    width: 100%;
+    height: 3px;
+    background-color: rgba(231, 227, 227, 0.185);
+    background-clip: content-box;
+}
+
+.content-right .section-heading {
+    width: 90%;
+    margin: 0 auto;
+    padding: 60px 0 80px 0;
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.section-heading .line-dec {
+    display: block;
+    margin: 10px auto;
+    width: 50px;
+    height: 3px;
+    background-color: #823D51;
+}
+
+.section-heading span {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    word-spacing: 0.5px;
+}
+
+.post {
+    width: 90%;
+    margin: 0 auto;
+    padding: 50px 0px;
+}
+
+.post .left-image,
+.post .right-text,
+.post .left-text,
+.post .right-image {
+    float: left;
+    width: 50%;
+}
+
+.post .right-image {
+    text-align: right;
+}
+
+.post .left-image img,
+.post .right-image img {
+    opacity: 0.5;
+    width: 90%;
+}
+
+.post h4 {
+    text-indent: 20px;
+}
+
+.post p {
+    text-align: justify;
+}
+
+.works table {
+    width: 90%;
+    margin: 0px auto;
+    margin-bottom: 100px;
+}
+
+.works td {
+    width: 50%;
+    height: auto;
+    padding: 5px;
+}
+
+.works img {
+    width: 100%;
+    height: auto;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.works img:hover {
+    opacity: 1.0;
+    box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.459);
+}

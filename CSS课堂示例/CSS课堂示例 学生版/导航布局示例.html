@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CSS导航+布局示例</title>
 
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./style/test.css">
 </head>
 
 <body>
@@ -38,7 +40,7 @@
         </ul>
     </div>
 
-    <div class="content">
+    <div class="content clearfix">
         <div class="column content-left">
             <div class="container">
                 <div class="author-content">
@@ -59,7 +61,7 @@
 
         <div class="column content-right">
             <div class="section" id="AboutMe">
-                <div class="section-heading">
+                <div class="section-heading clearfix">
                     <h2>About Me</h2>
                     <div class="line-dec"></div>
                     <span>Donec tristique feugiat lacus, at sollicitudin nunc euismod
@@ -70,7 +72,7 @@
                     </span>
                 </div>
 
-                <div class="post">
+                <div class="post clearfix">
                     <div class="left-image">
                         <img src="images/portfolio-1.jpg" alt="">
                     </div>
@@ -86,7 +88,7 @@
                     </div>
                 </div>
 
-                <div class="post">
+                <div class="post clearfix">
                     <div class="left-text">
                         <h4>Sed sagittis rhoncus velit</h4>
                         <p>
@@ -102,7 +104,7 @@
             </div>
 
             <div class="section" id="MyWork">
-                <div class="section-heading">
+                <div class="section-heading  clearfix">
                     <h2>My Work</h2>
                     <div class="line-dec"></div>
                     <span>Donec tristique feugiat lacus, at sollicitudin nunc euismod
@@ -133,3 +135,8 @@
 </body>
 
 </html>
+
+<script>
+    var left = document.getElementsByClassName("content-left")[0];
+    left.style.height = window.innerHeight - 60 + "px";
+</script>
