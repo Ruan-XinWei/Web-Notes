@@ -86,6 +86,7 @@ body {
 
 .container .author-content h4,
 .post h4 {
+    font-size: 25px;
     font-weight: bold;
     padding: 15px 0px;
 }
@@ -99,13 +100,13 @@ body {
 .container .left-nav li a:link,
 .container .left-nav li a:visited {
     display: block;
-    height: 50px;
-    line-height: 50px;
+    height: 70px;
+    line-height: 70px;
     border-top: 1px solid #fff;
     text-decoration: none;
     color: #fff;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .container .left-nav li:last-child a {
@@ -150,9 +151,10 @@ body {
 
 .section-heading span {
     display: block;
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
     text-align: center;
+    line-height: 1.5em;
     word-spacing: 0.5px;
 }
 
@@ -176,7 +178,15 @@ body {
 
 .post .left-image img,
 .post .right-image img {
-    opacity: 0.5;
+    /* opacity: 0.5; */
+    display: block;
+    width: 80%;
+    margin: 0px auto;
+    border-radius: 10px;
+}
+
+.post .right-text p,
+.post .left-text p {
     width: 90%;
 }
 
@@ -185,6 +195,7 @@ body {
 }
 
 .post p {
+    line-height: 1.5em;
     text-align: justify;
 }
 
