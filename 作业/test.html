@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sidenav {
+            height: 100%;
+            width: 0px;
+            /*初始不可见*/
+            background-color: #111;
+            padding-top: 60px;
+            overflow-x: hidden;
+            /*x轴溢出处理*/
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 999;
+            transition: 0.5s;
+        }
+
+        .sidenav a:link,
+        .sidenav a:visited {
+            text-decoration: none;
+            display: block;
+            padding: 8px 8px 8px 32px;
+            font-size: 20px;
+            color: #818181;
+            transition: 30s;
+        }
+
+        .sidenav a:hover,
+        .sidenav a:active {
+            font-size: 200px;
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0px;
+            right: 25px;
+            font-size: 25px;
+        }
+
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
+
+        .bottom{
+            height: 1000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+    <div id="main">
+        <h2>侧边栏实例 - 页面主体向右移动</h2>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; 打开
+        </span>
+    </div>
+    <div class="bottom"></div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
+</body>
+
+</html>
