@@ -1,0 +1,24 @@
+.item>img.img-fluid {
+    width: 690px;
+    height: 294.4px;
+}
+
+.single-gallery img{
+    width: 250px;
+    height: 300px;
+}
+
+.active-works-carousel .owl-dots .owl-dot.active{
+    background: #777777;
+}
+
+.video-area {
+    margin-top: 120px;
+    padding: 200px 0 60px 0;
+    position: relative;
+    background: url(../img/665c69642da127815246805ee299f058bc94bab1.jpg) no-repeat center center/cover;
+}
+
+.video-area .overlay-bg {
+    background-image: -webkit-linear-gradient(0deg, #7c7a7a 0%, #a58383 100%);
+}
