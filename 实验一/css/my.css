@@ -22,3 +22,26 @@
 .video-area .overlay-bg {
     background-image: -webkit-linear-gradient(0deg, #7c7a7a 0%, #a58383 100%);
 }
+
+.right-nav {
+    position: fixed;
+    bottom: 20px;
+    right: -30px;
+    z-index: 999;
+    transition: 5s;
+    cursor: pointer;
+}
+
+.right-nav .top .fa-angle-up {
+    color: black;
+    text-align: center;
+    font-size: 35px;
+    width: 30px;
+    margin-bottom: 20px;
+}
+
+.right-nav .black img{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}

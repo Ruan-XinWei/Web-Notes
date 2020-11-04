@@ -1,5 +1,6 @@
 $("#black").click(function () {
-    var s = $(this).html();
+    var s = $("[alt$='间模式']").attr("alt");
+    // var s = $(this).html();
     if (s == "夜间模式") {
         $('body').css("background-color", "black");
         $('body').css("opacity", "0.7")
@@ -13,7 +14,12 @@ $("#black").click(function () {
         $('.info-content').append("<style>.info-area .info-content::after{background-color: black}</style>")
         $('.single-feature').append("<style>.p1-gradient-bg, .primary-btn, .primary-btn2:hover, .single-feature:hover, .video-area .overlay-bg, .single-footer-widget .click-btn, .generic-banner {background-image: -webkit-linear-gradient(0deg, #5c5063 0%, #4b4555 100%);}</style>")
         $('.active-works-carousel .owl-dots .owl-dot.active').css("background", "#777777;")
-        $(this).html("白天模式");
+        // $(this).html("白天模式");
+        // $("[alt='夜间模式']").attr("alt","日间模式");
+        $("[alt='夜间模式']").attr({
+            "src": "img/sum.png",
+            "alt": "日间模式"
+        });
     } else {
         $('body').css("background-color", "");
         $('body').css("opacity", "")
@@ -25,6 +31,14 @@ $("#black").click(function () {
         $('.header-btn').css("background-color", "white")
         $('.info-content').append("<style>.info-area .info-content::after{background-color: white}</style>")
         $('.single-feature').append("<style>.p1-gradient-bg, .primary-btn, .primary-btn2:hover, .single-feature:hover, .single-footer-widget .click-btn, .generic-banner {background-image: -moz-linear-gradient(0deg, #b21aff 0%, #732bde 100%);background-image: -webkit-linear-gradient(0deg, #b21aff 0%, #732bde 100%);background-image: -ms-linear-gradient(0deg, #b21aff 0%, #732bde 100%);}</style>")
-        $(this).html("夜间模式");
+        // $(this).html("夜间模式");
+        $("[alt='日间模式']").attr({
+            "src": "img/night.png",
+            "alt": "夜间模式"
+        });
     }
 });
+
+window.onload = function () {
+    document.getElementById("right-nav").style.right = "20px";
+}
