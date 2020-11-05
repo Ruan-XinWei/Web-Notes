@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="show"></div>
+    <script src="Scripts/weather.js"></script>
+    <script>
+        var show = document.getElementById("show");
+        show.innerHTML="未来5天12点气温：<br>";
+
+        var list = weather.list;
+        for(let i = 0; i < list.length; ++i) {
+            var d = new Date(list[i].dt_txt);
+            if(d.getHours() == 12) {
+                var temp = list[i].main.temp - 273.15;
+                show.innerHTML += d.toLocaleDateString() + " 12:00温度" + temp.toFixed(2) + "<br>";
+            }
+        }
+    </script>
+</body>
+</html>
