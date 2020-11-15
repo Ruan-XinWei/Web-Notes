@@ -1,0 +1,23 @@
+{
+  "id": "2171789",
+  "name": "test",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "test",
+  "glyphs": [
+    {
+      "icon_id": "10425143",
+      "name": "icon_xuanzhong",
+      "font_class": "icon_xuanzhong",
+      "unicode": "e66a",
+      "unicode_decimal": 58986
+    },
+    {
+      "icon_id": "16689589",
+      "name": "icon-double right-line",
+      "font_class": "icon-doubleright-line",
+      "unicode": "e6ee",
+      "unicode_decimal": 59118
+    }
+  ]
+}

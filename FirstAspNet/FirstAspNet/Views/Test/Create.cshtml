@@ -1,0 +1,30 @@
+﻿
+@{ ViewBag.Title = "Create"; }
+
+<h2>Create</h2>
+
+<form action="/Test/Create" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label for="id" class="control-label col-sm-1">学生编号</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" id="id" name="id" placeholder="请输入学生编号" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="name" class="control-label col-sm-1">学生姓名</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" id="name" name="name" placeholder="请输入学生姓名" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="age" class="control-label col-sm-1">学生年龄</label>
+        <div class="col-sm-5">
+            <input type="number" class="form-control" id="age" name="age" placeholder="请输入学生年龄" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-1 col-sm-1">
+            <button type="submit" class="btn btn-default">保存</button>
+        </div>
+    </div>
+</form>
