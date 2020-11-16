@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/reset.css">
+    <!-- <link rel="stylesheet" href="./style/reset.css"> -->
     <link rel="stylesheet" href="./fa/css/all.min.css">
     <link rel="stylesheet" href="./iconfont/iconfont.css">
     <link rel="stylesheet" href="ali-font/iconfont.css">
@@ -13,8 +13,24 @@
 </head>
 
 <body>
-    <div class="code">
-        验证码：<span id="code-main"></span>
+    <div class="char-code">
+        <div class="code">
+            <span>字符验证码：</span><span id="code-main"></span>
+            <i class="fas fa-sync fa-spin" id="refresh"></i>
+            <div class="input">
+                <table>
+                    <tr>
+                        <td><span>请输入验证码</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="char-input" autofocus="autofocus"></td>
+                    </tr>
+                    <tr>
+                        <td><button id="submit">提交</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
     <div class="captcha">
         <div class="img">

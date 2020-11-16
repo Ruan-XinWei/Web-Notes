@@ -5,16 +5,54 @@
     user-select: none;
 }
 
+body {
+    padding: 50px;
+    background-color: rgb(192, 178, 178);
+}
+
+.char-code {
+    float: left;
+    margin: 100px;
+    width: 270px;
+}
+
 .code {
     font-size: 20px;
     letter-spacing: 5px;
-    cursor: pointer;
     text-align: center;
 }
 
+.code span#code-main,
+.code i {
+    cursor: pointer;
+}
+
+.char-code .input {
+    margin: 20px;
+}
+
+.char-code .input input {
+    margin: 20px;
+    outline: none;
+    border-radius: 10px;
+    text-indent: 10px;
+    line-height: 20px;
+}
+
+.char-code .input button {
+    cursor: pointer;
+    outline: none;
+    margin: 20px;
+    height: 20px;
+    width: 80px;
+    border-radius: 10px;
+}
+
 .captcha {
+    float: left;
     width: 400px;
     margin: 0px auto;
+    margin-top: 50px;
 }
 
 .captcha .img {
@@ -22,6 +60,8 @@
     display: inline-block;
     width: 400px;
     height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .captcha .img #image {
@@ -38,6 +78,7 @@
     background-image: url(../img/img-success-section.gif);
     /* background-color: rgba(41, 37, 41, 0.733); */
     background-size: cover;
+    border-radius: 10px;
 }
 
 .captcha .slider {
@@ -45,6 +86,7 @@
     height: 40px;
     line-height: 40px;
     background-color: rgb(168, 168, 202);
+    border-radius: 20px;
 }
 
 .captcha .slider .background {
@@ -54,6 +96,8 @@
     height: 40px;
     width: 0px;
     background-color: rgb(46, 168, 224);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 .captcha .slider .text {
@@ -61,6 +105,7 @@
     width: 100%;
     line-height: 40px;
     text-align: center;
+    border-radius: 20px;
 }
 
 .captcha .slider .button {
@@ -73,6 +118,7 @@
     border: 2px solid rgba(219, 217, 217, 0.849);
     text-align: center;
     background-color: white;
+    border-radius: 20px;
 }
 
 .captcha .slider .button .section {
@@ -81,6 +127,7 @@
     width: 36px;
     height: 36px;
     margin: 0 auto;
+    border-radius: 10px;
 }
 
 .captcha .slider .button .fas {
