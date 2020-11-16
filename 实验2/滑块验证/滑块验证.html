@@ -106,7 +106,7 @@
  
         //3.1.1鼠标移动事件的方法实现
         function mousemoveHandler(e){
-            var e = e || window.event || e.which;
+            // var e = e || window.event || e.which;
             var moveX = e.clientX;
             var offsetX = getOffsetX(moveX - downX,0,successMoveDistance);
             bgColor.style.width = offsetX + "px";
@@ -116,7 +116,7 @@
                 success();
             }
             //如果不设置滑块滑动时会出现问题（目前还不知道为什么）
-            //e.preventDefault();
+            e.preventDefault();
         };
  
         //3.1.2鼠标松开事件的方法实现

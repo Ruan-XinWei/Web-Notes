@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    user-select: none;
+}
+
+.code {
+    font-size: 20px;
+    letter-spacing: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.captcha {
+    width: 400px;
+    margin: 0px auto;
+}
+
+.captcha .img {
+    position: relative;
+    display: inline-block;
+    width: 400px;
+    height: 250px;
+}
+
+.captcha .img #image {
+    width: 400px;
+    height: 250px;
+}
+
+.captcha .img .success_section {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    top: 0;
+    left: 0;
+    background-image: url(../img/img-success-section.gif);
+    /* background-color: rgba(41, 37, 41, 0.733); */
+    background-size: cover;
+}
+
+.captcha .slider {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    background-color: rgb(168, 168, 202);
+}
+
+.captcha .slider .background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 40px;
+    width: 0px;
+    background-color: rgb(46, 168, 224);
+}
+
+.captcha .slider .text {
+    position: absolute;
+    width: 100%;
+    line-height: 40px;
+    text-align: center;
+}
+
+.captcha .slider .button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border: 2px solid rgba(219, 217, 217, 0.849);
+    text-align: center;
+    background-color: white;
+}
+
+.captcha .slider .button .section {
+    position: absolute;
+    top: -0px;
+    width: 36px;
+    height: 36px;
+    margin: 0 auto;
+}
+
+.captcha .slider .button .fas {
+    font-size: 18px;
+    color: rgba(119, 113, 113, 0.781);
+}
