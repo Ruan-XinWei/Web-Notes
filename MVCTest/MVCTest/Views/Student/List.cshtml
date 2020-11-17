@@ -1,0 +1,14 @@
+﻿@model List<MVCTest.Models.student>
+@{ ViewBag.Title = "List"; }
+
+<h2>List</h2>
+
+<h2>
+    一共有 @Model.Count 条记录
+</h2>
+@foreach (MVCTest.Models.student s in Model)
+{
+    <p>id: @s.student_id</p>
+    <p>name:@s.student_name</p>
+    <p>age:@s.student_age</p>
+}

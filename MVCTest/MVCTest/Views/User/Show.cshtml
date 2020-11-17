@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Show</h2>
+
+<h2>管理员界面</h2>
+
+@foreach (MVCTest.Models.User user in Model)
+{
+    <p>id : @user.id</p>
+    <p>username : @user.username</p>
+    <p>password : @user.password</p>
+}

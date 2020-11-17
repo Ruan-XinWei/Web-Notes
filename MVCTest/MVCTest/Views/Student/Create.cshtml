@@ -1,0 +1,24 @@
+﻿
+@{ ViewBag.Title = "Create"; }
+
+<h2>添加学生信息</h2>
+<form action="/Student/Create" method="post">
+    <table>
+        <tr>
+            <td><span>学生编号</span></td>
+            <td><input type="text" name="student_id" id="student_id" placeholder="请输入学生编号" required></td>
+        </tr>
+        <tr>
+            <td><span>学生姓名</span></td>
+            <td><input type="text" name="student_name" id="student_name" placeholder="请输入学生姓名" required></td>
+        </tr>
+        <tr>
+            <td><span>学生年龄</span></td>
+            <td><input type="text" name="student_age" id="student_age" placeholder="请输入学生年龄" required></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="保存"></td>
+        </tr>
+    </table>
+</form>
