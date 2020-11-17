@@ -75,8 +75,8 @@ body {
     height: 38px;
     top: 0;
     left: 0;
-    background-image: url(../img/img-success-section.gif);
-    /* background-color: rgba(41, 37, 41, 0.733); */
+    /* background-image: url(../img/img-success-section.gif); */
+    background-color: rgba(41, 37, 41, 0.733);
     background-size: cover;
     border-radius: 10px;
 }

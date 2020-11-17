@@ -24,6 +24,8 @@ var success_length = length() //获取随机长度
 var success_position_x = success_length + 2 //x轴
 var success_position_y = Math.round(Math.random() * 150 + 50) //y轴
 
+var img_num = 0 //图片编号
+
 //产生一个四位验证码
 function makeCode() {
     string = ""
@@ -175,9 +177,12 @@ function selectSection() {
 //随机产生图片地址
 function randomImage() {
     var img = document.getElementById("img")
+    
     var num = Math.ceil(Math.random()*5) + 1;
-    var img_src = "./img/img"+ num +".png"
-    console.log(img_src)
+    img_num = (img_num + num)%5 + 2
+    var img_src = "./img/img"+ img_num +".png"
+    // console.log(img_src)
+    console.log(img.getAttribute("src"))
     img.setAttribute("src",img_src)
 }
 
