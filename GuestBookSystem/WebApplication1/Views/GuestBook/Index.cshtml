@@ -1,0 +1,13 @@
+﻿@model List<WebApplication1.Models.Guestbook>
+@{
+    ViewBag.Title = "首页";
+}
+<h2>留言本</h2>
+@Html.ActionLink("添加留言", "Create")
+@foreach (var gb in Model)
+{
+    <p>留言人：@gb.AuthorEmail ，时间：@gb.CreatedOn</p>
+    <p>标题：@gb.Title</p>
+    <p>内容：@gb.Content</p>
+    <hr />
+}
