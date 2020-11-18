@@ -88,8 +88,8 @@ B:\_Repos\Web-Notes\MVCTest\MVCTest\bin\zh-Hans\System.Web.Razor.resources.dll
 B:\_Repos\Web-Notes\MVCTest\MVCTest\bin\zh-Hans\System.Web.WebPages.resources.dll
 B:\_Repos\Web-Notes\MVCTest\MVCTest\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 B:\_Repos\Web-Notes\MVCTest\MVCTest\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
-B:\_Repos\Web-Notes\MVCTest\MVCTest\obj\Debug\MVCTest.csprojAssemblyReference.cache
 B:\_Repos\Web-Notes\MVCTest\MVCTest\obj\Debug\MVCTest.csproj.CoreCompileInputs.cache
 B:\_Repos\Web-Notes\MVCTest\MVCTest\obj\Debug\MVCTest.csproj.CopyComplete
 B:\_Repos\Web-Notes\MVCTest\MVCTest\obj\Debug\MVCTest.dll
 B:\_Repos\Web-Notes\MVCTest\MVCTest\obj\Debug\MVCTest.pdb
+B:\_Repos\Web-Notes\MVCTest\MVCTest\obj\Debug\MVCTest.csprojAssemblyReference.cache

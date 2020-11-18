@@ -1,14 +1,31 @@
-﻿@{
-    ViewBag.Title = "Show";
-}
+﻿@{ ViewBag.Title = "Show"; }
 
 <h2>Show</h2>
 
 <h2>管理员界面</h2>
 
-@foreach (MVCTest.Models.User user in Model)
-{
-    <p>id : @user.id</p>
-    <p>username : @user.username</p>
-    <p>password : @user.password</p>
-}
+<table>
+    <thead>
+        <tr>
+            <td>用户号</td>
+            <td>用户名</td>
+            <td>密码</td>
+            <td>操作</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (MVCTest.Models.User user in Model)
+        {
+<tr>
+    <td>@user.id</td>
+    <td>@user.username</td>
+    <td>@user.password</td>
+    <td>
+        <form action="/User/Delete" method="POST">
+            <input type="text" name="id" id="id" value="@user.id" hidden>
+            <input type="submit" value="删除">
+        </form>
+    </td>
+</tr>}
+    </tbody>
+</table>
