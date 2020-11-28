@@ -1,0 +1,67 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" href="~/Content/guestbook-index.css">
+</head>
+<body>
+    <img class="img" src="~/Image/bg.jpg">
+    <div class="guestbook clearfix">
+        <div class="main">
+            <div class="title">
+                <span>欢迎访问留言本</span>
+            </div>
+            <div class="buttons">
+                <div class="button login">
+                    <span>@Html.ActionLink("用户登录", "Login", "Account")</span>
+                </div>
+                <div class="button register">
+                    <span>@Html.ActionLink("用户注册", "Register", "Account")</span>
+                </div>
+            </div>
+            <div class="list">
+                <table>
+                    <tbody>
+                        @foreach (var gb in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <span class="username">@gb.User.Name</span>:
+                                    <span class="context">@gb.Content</span>
+                                    <span class="date">@gb.CreatedOn</span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <footer>
+                <p>&copy; 2020-@DateTime.Now.Year RuanXinWei版权所有</p>
+            </footer>
+        </div>
+    </div>
+</body>
+
+<script>
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    var bg = document.getElementsByClassName("img")[0];
+    window.onload = function () {
+        bg.style.width = width + "px";
+        bg.style.height = height + "px";
+    }
+
+    window.onresize = function () {
+        bg.style.width = window.innerWidth + "px";
+        bg.style.height = window.innerHeight + "px";
+    }
+</script>
+
+</html>

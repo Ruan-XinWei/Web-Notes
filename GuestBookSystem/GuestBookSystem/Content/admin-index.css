@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+.clearfix::before,
+.clearfix::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+body {
+    background-color: rgb(252, 246, 246);
+}
+
+a {
+    text-decoration: none;
+}
+
+.main .left a,
+.main .right table tbody tr td span a {
+    color: black;
+}
+
+li {
+    list-style: none;
+}
+
+.title {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    /* background-color: red; */
+}
+
+.title .welcome {
+    position: absolute;
+    left: 60px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.main {
+    width: 100%;
+    /* height: 600px; if<600px = 600px*/
+}
+
+.main .left {
+    float: left;
+    width: 15%;
+    height: 100%;
+    margin: 20px 0;
+}
+
+.main .left ul {
+    background-color: white;
+    border-radius: 20px;
+    margin-left: 20px;
+    padding: 30px 20px;
+}
+
+.main .left a {
+    display: block;
+    width: 70%;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #fff;
+}
+
+.main .left a:hover,
+.main .left a:active,
+.main .left a.active {
+    background-color: rgb(230, 225, 225);
+}
+
+.main .right {
+    float: left;
+    width: 80%;
+    margin: 20px 2%;
+    background-color: red;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.main .right table {
+    display: block;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    overflow-y: scroll;
+    text-align: center;
+    background-color: #fff;
+    border-collapse: collapse;
+}
+
+.main .right table thead,
+.main .right table tbody,
+.main .right table tr {
+    display: block;
+    width: 100%;
+}
+
+.main .right table td {
+    float: left;
+}
+
+.main .right table thead {
+    position: sticky;
+    top: 0px;
+    background-color: #fff;
+    font-weight: bold;
+}
+
+.main .right table tbody tr:nth-child(odd) {
+    background-color: rgb(199, 210, 230);
+}
+
+.main .right table tbody tr:nth-child(even) {
+    background-color: rgb(231, 236, 240);
+}
+
+.main .right table td {
+    width: 18%;
+    height: 50px;
+    line-height: 50px;
+    padding: 0px 1%;
+}
+
+.main .right table td span {
+    display: block;
+    /* width: 150px; */
+    width: 100%;
+    text-align: center;
+    /* padding: 0 10px; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.main .right table td span.button {
+    width: 50%;
+    height: 30px;
+    line-height: 30px;
+    margin: 10px auto;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.274);
+}
+
+.main .right table td span.button:hover,
+.main .right table td span.button:active {
+    background-color: #fff;
+}

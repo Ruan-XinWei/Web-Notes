@@ -1,0 +1,14 @@
+﻿@model IEnumerable<GuestBookSystem.Models.Guestbook>
+@{
+    ViewBag.Title = "CheckIndex";
+}
+
+<h2>CheckIndex</h2>
+
+@foreach(var gb in Model)
+{
+    <p>留言人：@gb.AuthorEmail，时间：@gb.CreatedOn</p>
+    <p>标题：@gb.Title</p>
+    <p>内容：@gb.Content</p>
+    <p>@Html.ActionLink("审核通过", "CheckMessageToFind", new { id = gb.GuestbookId })</p>
+}

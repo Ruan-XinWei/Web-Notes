@@ -1,0 +1,15 @@
+﻿@model IEnumerable<GuestBookSystem.Models.Guestbook>
+@{
+    ViewBag.Title = "AllWords";
+}
+
+<h2>AllWords</h2>
+
+@foreach (var gb in Model)
+{
+    <p>留言人：@gb.AuthorEmail，时间：@gb.CreatedOn</p>
+    <p>标题：@gb.Title</p>
+    <p>内容：@gb.Content</p>
+    @*<p>@Html.ActionLink("删除留言", "Delete", new { id = gb.GuestbookId })</p>*@
+    <hr />
+}

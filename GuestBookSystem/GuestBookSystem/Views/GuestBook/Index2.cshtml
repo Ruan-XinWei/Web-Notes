@@ -1,0 +1,56 @@
+﻿@model List<GuestBookSystem.Models.Guestbook>
+@{
+    ViewBag.Title = "首页";
+}
+@*<h2>留言本</h2>*@
+@*@Html.ActionLink("添加留言", "Create")*@
+@*@foreach (var gb in Model)
+{
+    <p>留言人：@gb.AuthorEmail ，时间：@gb.CreatedOn</p>
+    <p>标题：@gb.Title</p>
+    <p>内容：@gb.Content</p>
+    <hr />
+}*@
+
+<link rel="stylesheet" href="~/Content/guestbook-index.css">
+
+<img src="~/Image/bg.jpg">
+<div class="guestbook clearfix">
+    <div class="main">
+        <div class="title">
+            <span>欢迎访问留言本</span>
+        </div>
+        <div class="buttons">
+            <div class="button login">
+                <span>用户登录</span>
+            </div>
+            <div class="button register">
+                <span>用户注册</span>
+            </div>
+        </div>
+        <div class="list">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="username">user</span>:
+                            <span class="context">context</span>
+                            <span class="date">date</span>
+                        </td>
+                    </tr>
+                    @foreach(var gb in Model)
+                    {
+                        <tr>
+                            <td>
+                                <span class="username"> @gb.AuthorEmail </span>:
+                                <span class="context"> @gb.Content </span>
+                                <span class="date"> @gb.CreatedOn </span>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

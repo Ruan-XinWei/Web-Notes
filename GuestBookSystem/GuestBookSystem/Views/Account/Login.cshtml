@@ -1,0 +1,25 @@
+﻿@model GuestBookSystem.Models.Admin
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <p>
+        用户名：@Html.EditorFor(a => a.Name)
+        @Html.ValidationMessageFor(a => a.Name)
+    </p>
+    <p>
+        密码：@Html.EditorFor(a => a.Password)
+        @Html.ValidationMessageFor(a => a.Password)
+    </p>
+    <input type="submit" value="登录" />
+}
+
+@if(@ViewBag.STATE == false) {
+    <script>alert("登录失败")</script>   
+}
