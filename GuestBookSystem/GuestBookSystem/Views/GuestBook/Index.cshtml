@@ -33,7 +33,7 @@
                         {
                             <tr>
                                 <td>
-                                    <span class="username">@gb.User.Name</span>:
+                                    <span class="username">@gb.User.Name :</span>
                                     <span class="context">@gb.Content</span>
                                     <span class="date">@gb.CreatedOn</span>
                                 </td>
@@ -63,5 +63,12 @@
         bg.style.height = window.innerHeight + "px";
     }
 </script>
-
+<script>
+    var spans = document.getElementsByTagName("span")
+    for (let i = 0; i < spans.length; ++i) {
+        if (spans[i].scrollWidth > spans[i].offsetWidth) {
+            spans[i].setAttribute("title", spans[i].innerText)
+        }
+    }
+</script>
 </html>

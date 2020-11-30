@@ -29,98 +29,192 @@ body {
     text-align: center;
 }
 
-.guestbook .main {
-    width: 50%;
-    height: 600px;
-    margin: 50px auto;
-    background-color: rgba(247, 240, 240, 0.966);
-}
+    .guestbook .main {
+        position: relative;
+        width: 50%;
+        height: 600px;
+        margin: 50px auto;
+        background-color: rgba(247, 240, 240, 0.966);
+    }
 
-.guestbook .main .title {
-    background-color: rgba(53, 106, 156, 0.801);
-    line-height: 60px;
-    font-weight: bold;
-    color: white;
-    letter-spacing: 10px;
-    font-size: 20px;
-}
+        .guestbook .main .back a {
+            display: block;
+            position: absolute;
+            background-color: rgba(247, 240, 240, 0.5);
+            border-radius: 20px;
+            top: 10px;
+            left: 10px;
+            line-height: 30px;
+            padding: 5px 20px;
+            color: white;
+            text-decoration: none;
+        }
 
-.guestbook .main .buttons {
-    width: 100%;
-    height: 40px;
-    line-height: 40px;
-    margin: 15px 0px;
-}
+            .guestbook .main .back a:hover,
+            .guestbook .main .back a:active {
+                background-color: white;
+                color: black;
+            }
 
-.guestbook .main .buttons .button {
-    float: right;
-    cursor: pointer;
-    width: 80px;
-    padding: 0px 10px;
-    margin-right: 20px;
-    border-radius: 10px;
-}
+        .guestbook .main .title {
+            background-color: rgba(53, 106, 156, 0.801);
+            line-height: 60px;
+            font-weight: bold;
+            color: white;
+            letter-spacing: 10px;
+            font-size: 20px;
+        }
 
-.guestbook .main .buttons span a:link,
-.guestbook .main .buttons span a:visited {
-    color: black;
-}
+        .guestbook .main .buttons {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            margin: 15px 0px;
+        }
 
-.guestbook .main .buttons span a:hover,
-.guestbook .main .buttons span a:active {
-    color: #fff;
-}
+            .guestbook .main .buttons .button {
+                float: right;
+                cursor: pointer;
+                width: 80px;
+                padding: 0px 10px;
+                margin-right: 20px;
+                border-radius: 10px;
+            }
 
-.guestbook .main .buttons .login {
-    color: #fff;
-    background-image: linear-gradient(rgb(127, 233, 28), rgb(117, 172, 124));
-}
+            .guestbook .main .buttons span a:link,
+            .guestbook .main .buttons span a:visited {
+                color: black;
+            }
 
-.guestbook .main .buttons .register {
-    background-image: linear-gradient(rgb(60, 145, 241), rgb(95, 119, 197));
-}
+            .guestbook .main .buttons span a:hover,
+            .guestbook .main .buttons span a:active {
+                color: #fff;
+            }
 
-.guestbook .main .list {
-    height: 65%;
-    overflow: hidden;
-    overflow-y: scroll;
-}
+            .guestbook .main .buttons .login {
+                color: #fff;
+                background-image: linear-gradient(rgb(127, 233, 28), rgb(117, 172, 124));
+            }
 
-.guestbook .main .list table {
-    width: 100%;
-    text-align: left;
-    text-indent: 20px;
-}
+            .guestbook .main .buttons .register {
+                background-image: linear-gradient(rgb(60, 145, 241), rgb(95, 119, 197));
+            }
 
-.guestbook .main .list tr {
-    display: block;
-    padding: 5px 0px;
-    /* margin: 0px 10px; */
-    margin-left: 10px;
-    line-height: 50px;
-    font-size: 18px;
-}
+        .guestbook .main .list {
+            height: 65%;
+            overflow: hidden;
+            overflow-y: scroll;
+        }
 
-.guestbook .main .list tr:nth-child(odd) {
-    background-color: rgb(199, 210, 230);
-}
+            .guestbook .main .list table {
+                width: 100%;
+                text-align: left;
+            }
 
-.guestbook .main .list tr:nth-child(even) {
-    background-color: rgb(231, 236, 240);
-}
+            .guestbook .main .list tr {
+                display: block;
+                padding: 5px 0px;
+                /* margin: 0px 10px; */
+                margin-left: 10px;
+                line-height: 50px;
+                font-size: 18px;
+                /*width: 100%;*/
+            }
 
-.guestbook .main .list span.username {
-    color: rgb(173, 17, 6);
-    font-weight: bold;
-}
+                .guestbook .main .list tr:nth-child(odd) {
+                    background-color: rgb(199, 210, 230);
+                }
 
-.guestbook .main .list span.date {
-    display: inline-block;
-    color: rgb(100, 97, 97);
-    font-style: italic;
+                .guestbook .main .list tr:nth-child(even) {
+                    background-color: rgb(231, 236, 240);
+                }
 
-}
+                .guestbook .main .list tr td {
+                    width: 100%
+                }
 
-.guestbook .main footer {
-    margin-top: 30px;
-}
+                    .guestbook .main .list tr td span {
+                        float: left;
+                    }
+
+                    .guestbook .main .list tr td span {
+                        display: inline-block;
+                        padding-left: 20px;
+                        height: 50px;
+                        text-align: center;
+                        line-height: 50px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+
+                        .guestbook .main .list tr td span.username {
+                            width: 150px;
+                            color: rgb(173, 17, 6);
+                            font-weight: bold;
+                        }
+
+                        .guestbook .main .list tr td span.context {
+                            width: 300px;
+                        }
+
+                        .guestbook .main .list tr td span.date {
+                            width: 200px;
+                            color: rgb(100, 97, 97);
+                            font-style: italic;
+                        }
+
+        .guestbook .main .main-login {
+            /* jsÊÊÊ±µ÷Õû */
+            margin-top: 100px;
+        }
+
+            .guestbook .main .main-login div:not(.submit) input,
+            .guestbook .main .main-login div.srole {
+                outline-style: none;
+                border-radius: 20px;
+                border: none;
+                text-indent: 10px;
+                height: 40px;
+                line-height: 40px;
+                margin: 0px auto;
+                margin-bottom: 20px;
+                width: 40%;
+                font-size: 20px;
+            }
+
+                .guestbook .main .main-login div.srole span.text {
+                    float: left;
+                    color: rgb(87, 77, 77);
+                }
+
+                .guestbook .main .main-login div.srole select {
+                    outline-style: none;
+                    height: 30px;
+                    text-align: center;
+                    border: 1px solid rgb(216, 211, 211);
+                }
+
+
+            .guestbook .main .main-login .submit input {
+                cursor: pointer;
+                width: 20%;
+                height: 40px;
+                outline-style: none;
+                border: none;
+                border: 1px solid rgb(252, 247, 247);
+                border-radius: 20px;
+                background-color: rgb(214, 212, 212);
+            }
+
+                .guestbook .main .main-login .submit input:hover,
+                .guestbook .main .main-login .submit input:active {
+                    background-color: rgb(238, 234, 234);
+                    border: 1px solid white;
+                }
+
+        .guestbook .main footer {
+            position: absolute;
+            bottom: 50px;
+            width: 100%;
+        }

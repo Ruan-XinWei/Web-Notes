@@ -1,0 +1,65 @@
+﻿@model IEnumerable<GuestBookSystem.Models.Guestbook>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.NAME 后台</title>
+    <link rel="stylesheet" href="~/Content/user-allwords.css">
+</head>
+<body>
+    <div class="title">
+        <div class="welcome">
+            欢迎 @ViewBag.NAME !
+        </div>
+    </div>
+    <div class="main clearfix">
+        <div class="left">
+            <ul>
+                <li>@Html.ActionLink("所有留言", "AllWords", new { }, new { @class = "active" })</li>
+                <li>@Html.ActionLink("我的留言", "MyWords")</li>
+                <li>@Html.ActionLink("添加留言", "CreateWords")</li>
+                <li>@Html.ActionLink("登出", "Logout", "Account")</li>
+            </ul>
+        </div>
+        <div class="right">
+            <table class="first">
+                <thead id="sticky">
+                    <tr class="clearfix">
+                        <td>留言人</td>
+                        <td>时间</td>
+                        <td>标题</td>
+                        <td>内容</td>
+                        @*<td>操作</td>*@
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var gb in Model)
+                    {
+                        <tr class="clearfix">
+                            <td><span>@gb.User.Name</span></td>
+                            <td><span>@gb.CreatedOn</span></td>
+                            <td><span>@gb.Title</span></td>
+                            <td><span>@gb.Content</span></td>
+                            @*<td><span class="button">@Html.ActionLink("删除留言", "Delete", new { id = gb.GuestbookId })</span></td>*@
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    var spans = document.getElementsByTagName("span")
+    for (let i = 0; i < spans.length; ++i) {
+        if (spans[i].scrollWidth > spans[i].offsetWidth) {
+            spans[i].setAttribute("title", spans[i].innerText)
+        }
+    }
+</script>

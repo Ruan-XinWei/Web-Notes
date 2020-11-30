@@ -1,0 +1,51 @@
+﻿@model GuestBookSystem.Models.Guestbook
+@{
+    ViewBag.Title = "CreateWords";
+    Layout = "~/Views/Shared/_LayoutBackstage.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/user-allwords.css">
+
+<div class="left">
+    <ul>
+        <li>@Html.ActionLink("所有留言", "AllWords")</li>
+        <li>@Html.ActionLink("我的留言", "MyWords")</li>
+        <li>@Html.ActionLink("添加留言", "CreateWords", new { }, new { @class = "active" })</li>
+        <li>@Html.ActionLink("登出", "Logout", "Account")</li>
+    </ul>
+</div>
+<div class="right">
+    <form action="/User/CreateWords" method="post">
+        <table class="second">
+            <tr>
+                <td>标题：</td>
+                <td>@Html.TextBoxFor(g => g.Title, new { @autocomplete = "off", autofocus = "autofocus" })</td>
+            </tr>
+            <tr>
+                <td>内容：</td>
+                <td>@Html.TextAreaFor(g => g.Content, new { cols = 50, rows = 10 })</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="button"><input type="submit" value="发布" /></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<span hidden id="hidden">@Html.ValidationSummary()</span>
+
+<script>
+    console.log("Hello")
+    var hidden = document.getElementById("hidden")
+    var li = hidden.getElementsByTagName("li")
+    var info = ""
+    for (let i = 0; i < li.length; ++i) {
+        info += li[i].innerHTML + "\n";
+    }
+    console.log(info)
+    if (info.length > 5) {
+        alert(info)
+    }
+</script>
+

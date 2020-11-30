@@ -1,25 +1,49 @@
-﻿@model GuestBookSystem.Models.Admin
-
+﻿@model GuestBookSystem.Models.User
 @{
     ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
 }
 
-<h2>Login</h2>
-
-@using (Html.BeginForm())
+@using (Html.BeginForm("Login", "Account", new { ReturnUrl = "" }, FormMethod.Post))
 {
-    @Html.ValidationSummary()
-    <p>
-        用户名：@Html.EditorFor(a => a.Name)
-        @Html.ValidationMessageFor(a => a.Name)
-    </p>
-    <p>
-        密码：@Html.EditorFor(a => a.Password)
-        @Html.ValidationMessageFor(a => a.Password)
-    </p>
-    <input type="submit" value="登录" />
+    <div class="user">
+        @Html.TextBoxFor(a => a.Name, new { @placeholder = "用户名" })
+        @*@Html.ValidationMessageFor(a => a.Name)*@
+    </div>
+    <div class="password">
+        @Html.TextBoxFor(a => a.Password, new { @placeholder = "密码", @type = "password" })
+        @*@Html.ValidationMessageFor(a => a.Name)*@
+    </div>
+    <div class="submit">
+        <input type="submit" value="登录" id="submit">
+    </div>
+    <span hidden id="hidden">@Html.ValidationSummary()</span>
 }
 
-@if(@ViewBag.STATE == false) {
-    <script>alert("登录失败")</script>   
+@if (ViewBag.STATE == false)
+{
+    <script>
+        var info = "登录失败,请重新登录!";
+        alert(info);
+    </script>
 }
+
+<script>
+    console.log("Hello")
+    var hidden = document.getElementById("hidden")
+    var li = hidden.getElementsByTagName("li")
+    var info = ""
+    for (let i = 0; i < li.length; ++i) {
+        info += li[i].innerHTML + "\n";
+    }
+    console.log(info)
+    if (info.length > 5) {
+        var inp = document.getElementsByTagName("input");
+        for (let i = 0; i < inp.length; ++i) {
+            inp[i].value = ""
+        }
+        var sub = document.getElementsByClassName("submit")[0];
+        sub.innerHTML = '<input type="submit" value="登录" id="submit">'
+        alert(info);
+    }
+</script>

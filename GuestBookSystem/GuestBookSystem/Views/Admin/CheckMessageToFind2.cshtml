@@ -1,0 +1,17 @@
+﻿@model GuestBookSystem.Models.Guestbook
+@{
+    ViewBag.Title = "CheckMessageToFind";
+}
+
+<h2>CheckMessageToFind</h2>
+
+<p>确认是否通过?</p>
+<p>留言人：@Model.User.Name，时间：@Model.CreatedOn</p>
+<p>标题：@Model.Title</p>
+<p>内容：@Model.Content</p>
+
+@*@using (Html.BeginForm("CheckMessage", "Admin", FormMethod.Post))*@
+@using (Html.BeginForm())
+{
+    <input type="submit" value="通过">
+}

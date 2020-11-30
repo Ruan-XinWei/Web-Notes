@@ -58,11 +58,24 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="ServiceStack.Interfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Interfaces.5.10.2\lib\net472\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -192,6 +205,18 @@
     <Compile Include="Migrations\202011281325282_Initial10.designer.cs">
       <DependentUpon>202011281325282_Initial10.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011290319447_Initial11.cs" />
+    <Compile Include="Migrations\202011290319447_Initial11.designer.cs">
+      <DependentUpon>202011290319447_Initial11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011291537162_Initial12.cs" />
+    <Compile Include="Migrations\202011291537162_Initial12.designer.cs">
+      <DependentUpon>202011291537162_Initial12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011301457551_Initial13.cs" />
+    <Compile Include="Migrations\202011301457551_Initial13.designer.cs">
+      <DependentUpon>202011301457551_Initial13.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\GBSDBContext.cs" />
@@ -215,6 +240,26 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="IconFont\fa\css\all.css" />
+    <Content Include="IconFont\fa\css\all.min.css" />
+    <Content Include="IconFont\fa\css\brands.css" />
+    <Content Include="IconFont\fa\css\brands.min.css" />
+    <Content Include="IconFont\fa\css\fontawesome.css" />
+    <Content Include="IconFont\fa\css\fontawesome.min.css" />
+    <Content Include="IconFont\fa\css\regular.css" />
+    <Content Include="IconFont\fa\css\regular.min.css" />
+    <Content Include="IconFont\fa\css\solid.css" />
+    <Content Include="IconFont\fa\css\solid.min.css" />
+    <Content Include="IconFont\fa\css\svg-with-js.css" />
+    <Content Include="IconFont\fa\css\svg-with-js.min.css" />
+    <Content Include="IconFont\fa\css\v4-shims.css" />
+    <Content Include="IconFont\fa\css\v4-shims.min.css" />
+    <Content Include="IconFont\fa\webfonts\fa-brands-400.svg" />
+    <Content Include="IconFont\fa\webfonts\fa-regular-400.svg" />
+    <Content Include="IconFont\fa\webfonts\fa-solid-900.svg" />
+    <Content Include="IconFont\iconfont\iconfont.css" />
+    <Content Include="IconFont\iconfont\iconfont.js" />
+    <Content Include="IconFont\iconfont\iconfont.svg" />
     <Content Include="Image\bg.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -222,6 +267,23 @@
     <None Include=".dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>
     </None>
+    <Content Include="IconFont\fa\webfonts\fa-brands-400.eot" />
+    <Content Include="IconFont\fa\webfonts\fa-brands-400.ttf" />
+    <Content Include="IconFont\fa\webfonts\fa-brands-400.woff" />
+    <Content Include="IconFont\fa\webfonts\fa-brands-400.woff2" />
+    <Content Include="IconFont\fa\webfonts\fa-regular-400.eot" />
+    <Content Include="IconFont\fa\webfonts\fa-regular-400.ttf" />
+    <Content Include="IconFont\fa\webfonts\fa-regular-400.woff" />
+    <Content Include="IconFont\fa\webfonts\fa-regular-400.woff2" />
+    <Content Include="IconFont\fa\webfonts\fa-solid-900.eot" />
+    <Content Include="IconFont\fa\webfonts\fa-solid-900.ttf" />
+    <Content Include="IconFont\fa\webfonts\fa-solid-900.woff" />
+    <Content Include="IconFont\fa\webfonts\fa-solid-900.woff2" />
+    <Content Include="IconFont\iconfont\iconfont.eot" />
+    <Content Include="IconFont\iconfont\iconfont.json" />
+    <Content Include="IconFont\iconfont\iconfont.ttf" />
+    <Content Include="IconFont\iconfont\iconfont.woff" />
+    <Content Include="IconFont\iconfont\iconfont.woff2" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -249,18 +311,32 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\GuestBook\Index2.cshtml" />
     <Content Include="Views\GuestBook\Create.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Login2.cshtml" />
     <Content Include="Views\Admin\Index2.cshtml" />
-    <Content Include="Views\Admin\Delete.cshtml" />
+    <Content Include="Views\Admin\Delete2.cshtml" />
     <Content Include="Views\User\AllWords2.cshtml" />
-    <Content Include="Views\Admin\CheckMessageToFind.cshtml" />
+    <Content Include="Views\Admin\CheckMessageToFind2.cshtml" />
     <Content Include="Views\Admin\CheckIndex2.cshtml" />
     <Content Include="Views\GuestBook\Index.cshtml" />
+    <Content Include="Views\Account\Register2.cshtml" />
+    <Content Include="Views\Admin\CheckIndex3.cshtml" />
+    <Content Include="Views\Admin\Index3.cshtml" />
+    <Content Include="Views\User\AllWords3.cshtml" />
+    <Content Include="Views\User\MyWords2.cshtml" />
+    <Content Include="Views\User\CreateWords2.cshtml" />
+    <Content Include="Views\Shared\_LayoutAccount.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Admin\CheckIndex.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\User\CreateWords.cshtml" />
+    <Content Include="Views\Shared\_LayoutConfirmed.cshtml" />
+    <Content Include="Views\Admin\Delete.cshtml" />
+    <Content Include="Views\Admin\CheckMessageToFind.cshtml" />
+    <Content Include="Views\Shared\_LayoutBackstage.cshtml" />
     <Content Include="Views\User\AllWords.cshtml" />
     <Content Include="Views\User\MyWords.cshtml" />
+    <Content Include="Views\User\CreateWords4.cshtml" />
+    <Content Include="Views\Admin\CheckIndex.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -315,6 +391,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011281325282_Initial10.resx">
       <DependentUpon>202011281325282_Initial10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011290319447_Initial11.resx">
+      <DependentUpon>202011290319447_Initial11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011291537162_Initial12.resx">
+      <DependentUpon>202011291537162_Initial12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011301457551_Initial13.resx">
+      <DependentUpon>202011301457551_Initial13.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

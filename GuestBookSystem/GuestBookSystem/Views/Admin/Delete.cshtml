@@ -1,14 +1,29 @@
 ﻿@model GuestBookSystem.Models.Guestbook
-
 @{
     ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutConfirmed.cshtml";
 }
 
-<h2>确认是否删除？</h2>
-<p>留言人邮箱：@Model.AuthorEmail</p>
-<p>内容：@Model.Content</p>
-<p>时间：@Model.CreatedOn</p>
 @using (Html.BeginForm())
 {
-    <input type="submit" value="确认删除" />
+    <div class="info">
+        <table class="confirmed">
+            <tr>
+                <td>确认是否删除</td>
+            </tr>
+            <tr>
+                <td>留言人：@Model.User.Name</td>
+            </tr>
+            <tr>
+                <td>内容：@Model.Content</td>
+            </tr>
+            <tr>
+                <td>时间：@Model.CreatedOn</td>
+            </tr>
+            <tr>
+                <td class="button"><input type="submit" value="确认"></td>
+            </tr>
+        </table>
+        @Html.ActionLink("X","Index", new { }, new { @class="close"})
+    </div>
 }

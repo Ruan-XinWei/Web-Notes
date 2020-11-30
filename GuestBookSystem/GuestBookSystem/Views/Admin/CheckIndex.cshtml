@@ -1,55 +1,39 @@
 ﻿@model IEnumerable<GuestBookSystem.Models.Guestbook>
 @{
-    Layout = null;
+    ViewBag.Title = "CheckIndex";
+    Layout = "~/Views/Shared/_LayoutBackstage.cshtml";
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>管理员后台</title>
-    <link rel="stylesheet" href="/Content/admin-index.css">
-</head>
-<body>
-    <div class="title">
-        <div class="welcome">
-            欢迎 管理员
-        </div>
-    </div>
-    <div class="main clearfix">
-        <div class="left">
-            <ul>
-                <li>@Html.ActionLink("管理留言", "Index")</li>
-                <li>@Html.ActionLink("审核留言", "CheckIndex", new { }, new { @class = "active" })</li>
-                <li>@Html.ActionLink("登出", "Index", "GuestBook")</li>
-            </ul>
-        </div>
-        <div class="right">
-            <table>
-                <thead id="sticky">
-                    <tr class="clearfix">
-                        <td>留言人</td>
-                        <td>时间</td>
-                        <td>标题</td>
-                        <td>内容</td>
-                        <td>操作</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var gb in Model)
-                    {
-                        <tr class="clearfix">
-                            <td><span>@gb.User.Name</span></td>
-                            <td><span>@gb.CreatedOn</span></td>
-                            <td><span>@gb.Title</span></td>
-                            <td><span>@gb.Content</span></td>
-                            <td><span class="button">@Html.ActionLink("审核通过", "CheckMessageToFind", new { id = gb.GuestbookId })</span></td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    </div>
-</body>
-</html>
+<div class="left">
+    <ul>
+        <li>@Html.ActionLink("管理留言", "Index")</li>
+        <li>@Html.ActionLink("审核留言", "CheckIndex", new { }, new { @class = "active" })</li>
+        <li>@Html.ActionLink("登出", "Logout", "Account")</li>
+    </ul>
+</div>
+<div class="right">
+    <table>
+        <thead id="sticky">
+            <tr class="clearfix">
+                <td>留言人</td>
+                <td>时间</td>
+                <td>标题</td>
+                <td>内容</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var gb in Model)
+            {
+                <tr class="clearfix">
+                    <td><span>@gb.User.Name</span></td>
+                    <td><span>@gb.CreatedOn</span></td>
+                    <td><span>@gb.Title</span></td>
+                    <td><span>@gb.Content</span></td>
+                    <td><span class="button">@Html.ActionLink("审核通过", "CheckMessageToFind", new { id = gb.GuestbookId })</span></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

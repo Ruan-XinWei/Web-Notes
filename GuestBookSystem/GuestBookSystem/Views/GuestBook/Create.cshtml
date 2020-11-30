@@ -2,11 +2,6 @@
 <h2>留下你想说的话</h2>
 <form action="/GuestBook/Create" method="post">
     <p>
-        留言人邮箱：
-        @Html.TextBoxFor(g => g.AuthorEmail)
-        @Html.ValidationMessageFor(g => g.AuthorEmail)
-    </p>
-    <p>
         标题：
         @Html.TextBoxFor(g => g.Title)
         @Html.ValidationMessageFor(g => g.Title)

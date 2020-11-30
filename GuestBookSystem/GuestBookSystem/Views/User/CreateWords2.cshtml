@@ -1,0 +1,38 @@
+﻿@model GuestBookSystem.Models.Guestbook
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateWords</title>
+</head>
+<body>
+    <div>
+        <h2>留下你想说的话</h2>
+        <form action="/User/CreateWords" method="post">
+            <p>
+                标题：
+                @Html.TextBoxFor(g => g.Title)
+                @Html.ValidationMessageFor(g => g.Title)
+            </p>
+            <p>
+                内容：
+                @Html.TextAreaFor(g => g.Content, new { cols = 20, rows = 5 })
+                @Html.ValidationMessageFor(g => g.Content)
+            </p>
+            <input type="submit" value="发布" />
+        </form>
+        @section scripts{
+            <script src="/Scripts/jquery.validate.js"></script>
+            <script src="/Scripts/jquery.validate.unobtrusive.js"></script>
+            <script>
+                window.onload = function () { document.getElementById("Content").innerHTML = ""; }
+            </script>
+        }
+    </div>
+</body>
+</html>

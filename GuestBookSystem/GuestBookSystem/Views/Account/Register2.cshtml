@@ -1,0 +1,47 @@
+﻿@model GuestBookSystem.Models.User
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>注册</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td>注册邮箱：</td>
+                    <td>@Html.TextBoxFor(g => g.Email)</td>
+                    <td>@Html.ValidationMessageFor(g => g.Email)</td>
+                </tr>
+                <tr>
+                    <td>注册用户名：</td>
+                    <td>@Html.TextBoxFor(g => g.Name)</td>
+                    <td>@Html.ValidationMessageFor(g => g.Name)</td>
+                </tr>
+                <tr>
+                    <td>注册密码：</td>
+                    <td>@Html.TextBoxFor(g => g.Password)</td>
+                    <td>@Html.ValidationMessageFor(g => g.Password)</td>
+                </tr>
+                <tr>
+                    <td>注册角色：</td>
+                    <td>
+                        <select>
+                            <option value="0">管理员</option>
+                            <option value="1">普通用户</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr><td><input type="submit" value="提交"></td></tr>
+            </table>
+        }
+    </div>
+</body>
+</html>

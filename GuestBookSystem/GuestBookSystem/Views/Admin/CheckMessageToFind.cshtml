@@ -1,17 +1,30 @@
 ﻿@model GuestBookSystem.Models.Guestbook
 @{
     ViewBag.Title = "CheckMessageToFind";
+    Layout = "~/Views/Shared/_LayoutConfirmed.cshtml";
 }
 
-<h2>CheckMessageToFind</h2>
-
-<p>确认是否通过?</p>
-<p>留言人：@Model.AuthorEmail，时间：@Model.CreatedOn</p>
-<p>标题：@Model.Title</p>
-<p>内容：@Model.Content</p>
-
-@*@using (Html.BeginForm("CheckMessage", "Admin", FormMethod.Post))*@
 @using (Html.BeginForm())
 {
-    <input type="submit" value="通过">
+    <div class="info">
+        <table class="confirmed">
+            <tr>
+                <td>确认是否通过</td>
+            </tr>
+            <tr>
+                <td>留言人：@Model.User.Name</td>
+            </tr>
+            <tr>
+                <td>内容：@Model.Content</td>
+            </tr>
+            <tr>
+                <td>时间：@Model.CreatedOn</td>
+            </tr>
+            <tr>
+                <td class="button"><input type="submit" value="确认"></td>
+            </tr>
+        </table>
+        @Html.ActionLink("X", "CheckIndex", new { }, new { @class = "close" })
+    </div>
 }
+

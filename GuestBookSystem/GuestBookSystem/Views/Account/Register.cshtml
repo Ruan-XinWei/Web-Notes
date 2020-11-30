@@ -1,47 +1,57 @@
 ﻿@model GuestBookSystem.Models.User
 @{
-    Layout = null;
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
 }
 
-<!DOCTYPE html>
+@*注册邮箱,注册用户名,注册密码,注册角色*@
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>注册</title>
-</head>
-<body>
-    <div>
-        @using (Html.BeginForm("Register", "Account", FormMethod.Post))
-        {
-            <table>
-                <tr>
-                    <td>注册邮箱：</td>
-                    <td>@Html.TextBoxFor(g => g.Email)</td>
-                    <td>@Html.ValidationMessageFor(g => g.Email)</td>
-                </tr>
-                <tr>
-                    <td>注册用户名：</td>
-                    <td>@Html.TextBoxFor(g => g.Name)</td>
-                    <td>@Html.ValidationMessageFor(g => g.Name)</td>
-                </tr>
-                <tr>
-                    <td>注册密码：</td>
-                    <td>@Html.TextBoxFor(g => g.Password)</td>
-                    <td>@Html.ValidationMessageFor(g => g.Password)</td>
-                </tr>
-                <tr>
-                    <td>注册角色：</td>
-                    <td>
-                        <select>
-                            <option value="0">管理员</option>
-                            <option value="1">普通用户</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr><td><input type="submit" value="提交"></td></tr>
-            </table>
-        }
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+    <div class="email">
+        @Html.TextBoxFor(a => a.Email, new { @placeholder = "注册邮箱" })
     </div>
-</body>
-</html>
+    <div class="name">
+        @Html.TextBoxFor(a => a.Name, new { @placeholder = "注册用户名" })
+    </div>
+    <div class="password">
+        @Html.TextBoxFor(a => a.Password, new { @placeholder = "注册密码" })
+    </div>
+    <div class="srole">
+        @*@Html.TextBoxFor(a => a.SRole, new { @placeholder = "注册角色" })*@
+        @*@Html.ListBoxFor(a => a.SRole, new SelectList { new SelectListItem{ Text="1", Value="0" }})*@
+        <span class="text">
+            注册角色:
+        </span>
+        @*@Html.DropDownListFor(a => a.SRole, (SelectList)ViewData["listItems"])*@
+        <select id="SRole" name="SRole">
+            <option value="0">管理员</option>
+            <option value="1" selected>普通用户</option>
+        </select>
+    </div>
+    <div class="submit">
+        <input type="submit" value="注册" id="submit">
+    </div>
+    <span hidden id="hidden">@Html.ValidationSummary()</span>
+}
+
+<script>
+    var mainTop = document.getElementsByClassName("main-login")[0];
+    mainTop.style.marginTop = "50px"
+    var hidden = document.getElementById("hidden")
+    var li = hidden.getElementsByTagName("li")
+    var info = ""
+    for (let i = 0; i < li.length; ++i) {
+        info += li[i].innerHTML + "\n";
+    }
+    console.log(info)
+    if (info.length > 5) {
+        var inp = document.getElementsByTagName("input");
+        for (let i = 0; i < inp.length; ++i) {
+            inp[i].value = ""
+        }
+        var sub = document.getElementsByClassName("submit")[0];
+        sub.innerHTML = '<input type="submit" value="注册" id="submit">'
+        alert(info);
+    }
+</script>

@@ -10,7 +10,7 @@ namespace GuestBookSystem.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "GuestBook");
         }
 
         public ActionResult About()

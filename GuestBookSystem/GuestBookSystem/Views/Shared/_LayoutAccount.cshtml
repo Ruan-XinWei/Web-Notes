@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/guestbook-index.css">
+    <link href="~/IconFont/fa/css/all.min.css" rel="stylesheet" />
+    <link href="~/IconFont/iconfont/iconfont.css" rel="stylesheet" />
+</head>
+<body>
+    <img class="img" src="~/Image/bg.jpg">
+    <div class="guestbook clearfix">
+        <div class="main">
+            <div class="back">
+                <a href="/GuestBook/Index">
+                    <i class="fas fa-angle-double-left"></i>
+                    <span>返回</span>
+                </a>
+                @*<span>@Html.ActionLink("返回", "Index", "GuestBook")</span>*@
+            </div>
+            <div class="title">
+                <span>欢迎访问留言本</span>
+            </div>
+            <div class="buttons">
+                <div class="button login">
+                    <span>@Html.ActionLink("用户登录", "Login", "Account")</span>
+                </div>
+                <div class="button register">
+                    <span>@Html.ActionLink("用户注册", "Register", "Account")</span>
+                </div>
+            </div>
+            <div class="main-login">
+                @RenderBody()
+            </div>
+            <footer>
+                <p>&copy; 2020-@DateTime.Now.Year RuanXinWei版权所有</p>
+            </footer>
+        </div>
+    </div>
+</body>
+
+<script>
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    var bg = document.getElementsByClassName("img")[0];
+    window.onload = function () {
+        bg.style.width = width + "px";
+        bg.style.height = height + "px";
+    }
+
+    window.onresize = function () {
+        bg.style.width = window.innerWidth + "px";
+        bg.style.height = window.innerHeight + "px";
+    }
+</script>
+
+</html>

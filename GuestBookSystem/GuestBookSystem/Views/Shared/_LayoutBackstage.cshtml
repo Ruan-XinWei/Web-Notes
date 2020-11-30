@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.NAME 后台</title>
+    <link rel="stylesheet" href="/Content/admin-index.css">
+</head>
+<body>
+    <div class="title">
+        <div class="welcome">
+            欢迎 @ViewBag.NAME !
+        </div>
+    </div>
+    <div class="main clearfix">
+        @RenderBody()
+    </div>
+</body>
+</html>
+
+<script>
+    var spans = document.getElementsByTagName("span")
+    for (let i = 0; i < spans.length; ++i) {
+        if (spans[i].scrollWidth > spans[i].offsetWidth) {
+            spans[i].setAttribute("title", spans[i].innerText)
+        }
+    }
+</script>
