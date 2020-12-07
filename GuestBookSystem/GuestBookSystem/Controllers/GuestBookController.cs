@@ -6,12 +6,12 @@ namespace GuestBookSystem.Controllers
 {
     public class GuestBookController : Controller
     {
-        GBSDBContext db = new GBSDBContext();
+        GBSDBContext db = new GBSDBContext();   //数据库
         // GET: GuestBook
         public ActionResult Index()
         {
-            var gb = db.Guestbooks.Where(a => a.isPass == true);
-            return View(gb.OrderByDescending(a=>a.CreatedOn).ToList());
+            var gb = db.Guestbooks.Where(a => a.isPass == true);    //如果查询到状态为通过的留言
+            return View(gb.OrderByDescending(a=>a.CreatedOn).ToList()); //则根据创建留言时间进行倒序
         }
         public ActionResult Create()
         {

@@ -40,11 +40,11 @@ namespace WebApplication1.Controllers
             GetUser();
             if (ModelState.IsValid)
             {
-                gb.User = db.Users.Where(a => a.UserId == UserId).FirstOrDefault();
+                gb.User = db.Users.Where(a => a.UserId == UserId).FirstOrDefault(); //找到登录用户的ID，自动添加到留言本中
                 //gb.CreatedOn = System.DateTime.Now;
-                db.Guestbooks.Add(gb);
-                db.SaveChanges();
-                return RedirectToAction("MyWords");
+                db.Guestbooks.Add(gb);  //在数据库中添加这条记录
+                db.SaveChanges();   //保存数据库
+                return RedirectToAction("MyWords"); //跳转到/User/MyWords，显示个人留言
             }
             return View();
         }

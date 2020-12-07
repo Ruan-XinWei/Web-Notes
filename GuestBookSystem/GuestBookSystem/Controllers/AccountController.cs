@@ -25,10 +25,12 @@ namespace GuestBookSystem.Controllers
         [HttpPost]
         public ActionResult Login(User user)
         {
+            //登录不需要填写Email和SRole，将其移除
             ModelState.Remove("Email");
             ModelState.Remove("SRole");
             if (ModelState.IsValid)
             {
+                //在数据库中查找对应账号密码
                 var dbUser = db.Users.Where(a => a.Name == user.Name && a.Password == user.Password).FirstOrDefault();
 
                 FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1, user.UserId.ToString(), DateTime.Now, DateTime.Now.AddMinutes(30), false, user.SRole.ToString());
@@ -44,18 +46,18 @@ namespace GuestBookSystem.Controllers
                     Response.Redirect(returnUrl);
                 }*/
 
-                if (dbUser != null)
+                if (dbUser != null) //如果能找到对应账号密码
                 {
-                    ViewBag.STATE = true;
-                    if (dbUser.SRole.ToString() == "管理员")
+                    ViewBag.STATE = true;   //记录登录状态
+                    if (dbUser.SRole.ToString() == "管理员")   //如果是管理员
                     {
-                        Session["UserId"] = dbUser.UserId;
-                        return RedirectToAction("Index", "Admin");
+                        Session["UserId"] = dbUser.UserId;  //记录UserId
+                        return RedirectToAction("Index", "Admin");  //跳转Admin/Index
                     }
-                    else if (dbUser.SRole.ToString() == "普通用户")
+                    else if (dbUser.SRole.ToString() == "普通用户") //如果是普通用户
                     {
                         Session["UserId"] = dbUser.UserId;
-                        return RedirectToAction("AllWords", "User");
+                        return RedirectToAction("AllWords", "User");    //跳转User/AllWords
                     }
                 }
                 else
@@ -63,7 +65,6 @@ namespace GuestBookSystem.Controllers
                     ViewBag.STATE = false;
                 }
             }
-            /*ModelState.AddModelError("", "用户名或密码错误");*/
 
             return View();
         }
@@ -79,13 +80,13 @@ namespace GuestBookSystem.Controllers
         [HttpPost]
         public ActionResult Register(User user)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) //如果状态通过
             {
-                db.Users.Add(user);
-                db.SaveChanges();
-                return RedirectToAction("Login");
+                db.Users.Add(user); //在数据库中添加这个记录
+                db.SaveChanges();   //保存数据库
+                return RedirectToAction("Login");   //跳转到/Login
             }
-            return View();
+            return View();  //如果不通过，则返回注册视图
         }
 
         public ActionResult Logout()
