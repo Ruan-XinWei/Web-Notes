@@ -156,13 +156,13 @@
 
 1. 日间模式和夜间模式的切换
    1. 夜间模式
-      <img src="../image/image-20201203195629581.png" alt="image-20201203195629581" style="zoom: 33%;" />
+      <img src="https://gitee.com/ruanxinwei/image/raw/master/image/20201207222117.png" alt="image-20201203195629581" style="zoom: 33%;" />
    2. 日间模式
-      <img src="../image/image-20201203195517289.png" alt="image-20201203195517289" style="zoom:33%;" />
+      <img src="https://gitee.com/ruanxinwei/image/raw/master/image/20201207222118.png" alt="image-20201203195517289" style="zoom:33%;" />
 2. 右下角的功能按钮
-   ![image-20201203195547084](../image/image-20201203195547084.png)
+   ![image-20201203195547084](https://gitee.com/ruanxinwei/image/raw/master/image/20201207222119.png)
 3. 整体实现效果
-   <img src="../image/image-20201203195927749.png" alt="image-20201203195927749" style="zoom:33%;" />
+   <img src="https://gitee.com/ruanxinwei/image/raw/master/image/20201207222120.png" alt="image-20201203195927749" style="zoom:33%;" />
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -429,11 +429,11 @@
 ## 五、主要结果截图
 
 1. 主界面
-   <img src="../image/image-20201203210739285.png" alt="image-20201203210739285" style="zoom:33%;" />
+   <img src="https://gitee.com/ruanxinwei/image/raw/master/image/20201207222121.png" alt="image-20201203210739285" style="zoom:33%;" />
 2. 字符验证成功界面
-   <img src="../image/image-20201203210846826.png" alt="image-20201203210846826" style="zoom:33%;" />
+   <img src="https://gitee.com/ruanxinwei/image/raw/master/image/20201207222122.png" alt="image-20201203210846826" style="zoom:33%;" />
 3. 图片验证成功界面
-   <img src="../image/image-20201203210914244.png" alt="image-20201203210914244" style="zoom:33%;" />
+   <img src="https://gitee.com/ruanxinwei/image/raw/master/image/20201207222123.png" alt="image-20201203210914244" style="zoom:33%;" />
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -1117,17 +1117,17 @@
 ## 五、主要结果截图
 
 1. 留言本主页面
-   <img src="../image/image-20201204134210521.png" alt="image-20201204134210521" style="zoom:33%;" />
+   <img src="https://gitee.com/ruanxinwei/image/raw/master/image/20201207222124.png" alt="image-20201204134210521" style="zoom:33%;" />
 2. 注册页面
-   <img src="../image/image-20201204134359392.png" alt="image-20201204134359392" style="zoom:33%;" />
+   <img src="https://gitee.com/ruanxinwei/image/raw/master/image/20201207222125.png" alt="image-20201204134359392" style="zoom:33%;" />
 3. 登录页面
-   <img src="../image/image-20201204134419546.png" alt="image-20201204134419546" style="zoom:33%;" />
+   <img src="https://gitee.com/ruanxinwei/image/raw/master/image/20201207222126.png" alt="image-20201204134419546" style="zoom:33%;" />
 4. 用户页面
-   <img src="../image/image-20201204134513336.png" alt="image-20201204134513336" style="zoom:33%;" />
+   <img src="https://gitee.com/ruanxinwei/image/raw/master/image/20201207222127.png" alt="image-20201204134513336" style="zoom:33%;" />
 5. 管理员页面
-   <img src="../image/image-20201204134535207.png" alt="image-20201204134535207" style="zoom:33%;" />
+   <img src="https://gitee.com/ruanxinwei/image/raw/master/image/20201207222128.png" alt="image-20201204134535207" style="zoom:33%;" />
 6. 确认信息页面
-   <img src="../image/image-20201204134559749.png" alt="image-20201204134559749" style="zoom:33%;" />
+   <img src="https://gitee.com/ruanxinwei/image/raw/master/image/20201207222129.png" alt="image-20201204134559749" style="zoom:33%;" />
 
 <div STYLE="page-break-after: always;"></div>
 
