@@ -1158,7 +1158,7 @@
 2. 注册页面
    <img src="https://gitee.com/ruanxinwei/image/raw/master/image/20201207222125.png" alt="image-20201204134359392" style="zoom:33%;" />
 3. 登录页面
-   <img src="https://gitee.com/ruanxinwei/image/raw/master/image/20201210095803.png" style="zoom:120%;" >
+   <img src="https://gitee.com/ruanxinwei/image/raw/master/image/20201210095803.png" alt="" style="zoom:120%;" >
 4. 用户页面
    <img src ="https://gitee.com/ruanxinwei/image/raw/master/image/20201210095804.png" style="zoom:120%;" >
 5. 管理员页面
