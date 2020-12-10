@@ -1158,13 +1158,13 @@
 2. 注册页面
    <img src="https://gitee.com/ruanxinwei/image/raw/master/image/20201207222125.png" alt="image-20201204134359392" style="zoom:33%;" />
 3. 登录页面
-   <img src="https://gitee.com/ruanxinwei/image/raw/master/image/20201207222126.png" alt="image-20201204134419546" style="zoom:33%;" />
+   ![image-20201210095726563](https://gitee.com/ruanxinwei/image/raw/master/image/20201210095803.png)
 4. 用户页面
-   <img src="https://gitee.com/ruanxinwei/image/raw/master/image/20201207222127.png" alt="image-20201204134513336" style="zoom:33%;" />
+   ![image-20201210095738642](https://gitee.com/ruanxinwei/image/raw/master/image/20201210095804.png)
 5. 管理员页面
-   <img src="https://gitee.com/ruanxinwei/image/raw/master/image/20201207222128.png" alt="image-20201204134535207" style="zoom:33%;" />
+   ![image-20201210095746992](https://gitee.com/ruanxinwei/image/raw/master/image/20201210095805.png)
 6. 确认信息页面
-   <img src="https://gitee.com/ruanxinwei/image/raw/master/image/20201207222129.png" alt="image-20201204134559749" style="zoom:33%;" />
+   ![image-20201210095756112](https://gitee.com/ruanxinwei/image/raw/master/image/20201210095806.png)
 
 <div STYLE="page-break-after: always;"></div>
 
