@@ -3,3 +3,5 @@
 *.c
 *.docx
 *.vscode/
+*.doc
+Test/
